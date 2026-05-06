@@ -1,0 +1,68 @@
+# Codelist: Motivations for volunteering (Tabelle 11.1 / 9.1)
+# null = item not present in that survey wave.
+
+motivations:
+  - id: enjoy_work
+    labels:
+      2022: "Ich habe Freude an der Tätigkeit."
+      2025: "Ich habe Freude an der Tätigkeit."
+
+  - id: common_good
+    labels:
+      2022: "Ich möchte etwas Nützliches zum Gemeinwohl beitragen."
+      2025: "Ich möchte etwas Nützliches zum Gemeinwohl beitragen."
+
+  - id: help_others
+    labels:
+      2022: "Ich möchte damit anderen helfen."
+      2025: "Ich möchte damit anderen helfen."
+
+  - id: career_benefit
+    labels:
+      2022: "Die Tätigkeit hilft mir in meinem Beruf."
+      2025: "Die Tätigkeit hilft mir in meinem Beruf."
+
+  - id: use_skills
+    labels:
+      2022: "Ich kann meine Fähigkeiten und Kenntnisse einbringen."
+      2025: "Ich kann meine Fähigkeiten und Kenntnisse einbringen."
+
+  - id: social_connection
+    labels:
+      2022: "Ich treffe Menschen und gewinne Freunde."
+      2025: "Ich treffe Menschen und gewinne Freunde."
+
+  - id: social_recognition
+    labels:
+      2022: "Ich bekomme gesellschaftliche Anerkennung."
+      2025: "Ich bekomme gesellschaftliche Anerkennung."
+
+  - id: stay_active
+    labels:
+      2022: "Ich bleibe dadurch körperlich und geistig aktiv."
+      2025: "Ich bleibe dadurch körperlich und geistig aktiv."
+
+  - id: share_experience
+    labels:
+      2022: "Ich kann meine Erfahrung teilen."
+      2025: "Ich kann meine Erfahrung teilen."
+
+  - id: learning
+    labels:
+      2022: "Ich habe die Möglichkeit zu lernen und mich weiterzubilden."
+      2025: "Ich habe die Möglichkeit zu lernen und mich weiterzubilden."
+
+  - id: find_job
+    labels:
+      2022: "Ich hoffe dadurch einen Job zu finden."
+      2025: "Ich hoffe dadurch einen Job zu finden."
+
+  - id: reciprocity
+    labels:
+      2022: "Ich möchte selbst auch Hilfe erhalten, wenn ich sie benötige."
+      2025: "Ich möchte selbst auch Hilfe erhalten, wenn ich sie benötige."
+
+  - id: important_cause
+    labels:
+      2022: "Ich möchte mich für eine wichtige Sache engagieren."
+      2025: null   # removed from survey in 2025

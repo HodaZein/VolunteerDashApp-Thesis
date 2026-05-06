@@ -1,0 +1,58 @@
+# Codelist: Barriers to volunteering (Tabelle 11.2 / 9.2)
+# All items identical in 2022 and 2025.
+
+barriers:
+  - id: never_asked
+    labels:
+      2022: "Ich bin niemals gefragt oder gebeten worden."
+      2025: "Ich bin niemals gefragt oder gebeten worden."
+
+  - id: never_thought
+    labels:
+      2022: "Ich habe nie darüber nachgedacht."
+      2025: "Ich habe nie darüber nachgedacht."
+
+  - id: family_burden
+    labels:
+      2022: "Ich bin durch Aufgaben in der Familie ausgelastet."
+      2025: "Ich bin durch Aufgaben in der Familie ausgelastet."
+
+  - id: illness_disability
+    labels:
+      2022: "Ich fühle mich durch Krankheit oder Behinderung nicht in der Lage."
+      2025: "Ich fühle mich durch Krankheit oder Behinderung nicht in der Lage."
+
+  - id: financial
+    labels:
+      2022: "Ich kann mir das finanziell nicht leisten."
+      2025: "Ich kann mir das finanziell nicht leisten."
+
+  - id: work_incompatible
+    labels:
+      2022: "Ich kann es nicht mit meinem Beruf vereinbaren."
+      2025: "Ich kann es nicht mit meinem Beruf vereinbaren."
+
+  - id: bad_experience
+    labels:
+      2022: "Ich habe schlechte Erfahrungen gemacht."
+      2025: "Ich habe schlechte Erfahrungen gemacht."
+
+  - id: no_contribution
+    labels:
+      2022: "Ich habe das Gefühl, dass ich keinen Beitrag leisten kann."
+      2025: "Ich habe das Gefühl, dass ich keinen Beitrag leisten kann."
+
+  - id: wrong_age
+    labels:
+      2022: "Ich habe nicht das richtige Alter."
+      2025: "Ich habe nicht das richtige Alter."
+
+  - id: lack_information
+    labels:
+      2022: "Ich bin über die Möglichkeiten zu wenig informiert."
+      2025: "Ich bin über die Möglichkeiten zu wenig informiert."
+
+  - id: nothing_nearby
+    labels:
+      2022: "Es gibt in der Nähe keine Tätigkeit, die für mich interessant ist."
+      2025: "Es gibt in der Nähe keine Tätigkeit, die für mich interessant ist."

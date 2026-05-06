@@ -1,0 +1,125 @@
+# Codelist: Demographic dimensions and their categories
+# available_from: first year this dimension appeared in the published tables
+# available_in: explicit list of years if not continuous
+
+demographics:
+  dimensions:
+    - id: gender
+      label: "Gender"
+      available_from: 2006
+      categories:
+        - id: all
+          labels: {2006: "Insgesamt", 2022: "Insgesamt", 2025: "Insgesamt"}
+        - id: male
+          labels: {2006: "Männer", 2022: "Männer", 2025: "Männer"}
+        - id: female
+          labels: {2006: "Frauen", 2022: "Frauen", 2025: "Frauen"}
+
+    - id: age_group
+      label: "Age Group"
+      available_from: 2006
+      categories:
+        - id: under_30
+          labels: {2022: "jünger als 30 Jahre", 2025: "jünger als 30 Jahre"}
+        - id: age_30_39
+          labels: {2022: "30–39 Jahre", 2025: "30-39 Jahre"}
+        - id: age_40_49
+          labels: {2022: "40–49 Jahre", 2025: "40-49 Jahre"}
+        - id: age_50_59
+          labels: {2022: "50–59 Jahre", 2025: "50-59 Jahre"}
+        - id: age_60_69
+          labels: {2022: "60–69 Jahre", 2025: "60-69 Jahre"}
+        - id: age_70_79
+          labels: {2022: "70–79 Jahre", 2025: "70-79 Jahre"}
+        - id: age_80_plus
+          labels: {2022: "80 Jahre oder älter", 2025: "80 Jahre oder älter"}
+
+    - id: education
+      label: "Education"
+      available_from: 2006
+      categories:
+        - id: compulsory_max
+          labels: {2022: "(max.) Pflichtschule", 2025: "(max.) Pflichtschule"}
+        - id: apprenticeship_voc
+          labels: {2022: "Lehre, BMS", 2025: "Lehre, BMS"}
+        - id: matura
+          labels: {2022: "Matura", 2025: "Matura"}
+        - id: university
+          labels: {2022: "Universität", 2025: "Universität"}
+
+    - id: employment
+      label: "Employment Status"
+      available_from: 2006
+      categories:
+        - id: employed
+          labels: {2022: "erwerbstätig", 2025: "erwerbstätig"}
+        - id: unemployed
+          labels: {2022: "arbeitssuchend, arbeitslos", 2025: "arbeitssuchend, arbeitslos"}
+        - id: retired
+          labels: {2022: "in Pension", 2025: "in Pension"}
+        - id: in_training
+          labels: {2022: "in Ausbildung", 2025: "in Ausbildung"}
+        - id: homemaker
+          labels: {2022: "Haushaltsführend", 2025: "haushaltsführend"}
+        - id: other_employment
+          labels: {2022: "sonstiges", 2025: "sonstiges"}
+
+    - id: migration_background
+      label: "Migration Background"
+      available_from: 2006
+      categories:
+        - id: first_generation
+          labels: {2022: "Migration 1. Generation", 2025: "Migration 1. Generation"}
+        - id: second_generation
+          labels: {2022: "Migration 2. Generation", 2025: "Migration 2. Generation"}
+        - id: no_migration
+          labels: {2022: "kein Migrationshintergrund", 2025: "kein Migrationshintergrund"}
+
+    - id: municipality_size
+      label: "Municipality Size"
+      available_from: 2006
+      categories:
+        - id: up_to_2500
+          labels: {2022: "<= 2 500 Einw.", 2025: "<=2 500 Einw."}
+        - id: up_to_10000
+          labels: {2022: "<= 10 000 Einw.", 2025: "<=10 000 Einw."}
+        - id: up_to_100000
+          labels: {2022: "<= 100 000 Einw.", 2025: "<=100 000 Einw."}
+        - id: over_100000
+          labels: {2022: "> 100 000 Einw.", 2025: ">100 000 Einw."}
+
+    - id: region
+      label: "Region (Bundesland)"
+      available_from: 2006
+      categories:
+        - id: burgenland
+          labels: {2022: "Burgenland", 2025: "Burgenland"}
+        - id: kaernten
+          labels: {2022: "Kärnten", 2025: "Kärnten"}
+        - id: niederoesterreich
+          labels: {2022: "Niederösterreich", 2025: "Niederösterreich"}
+        - id: oberoesterreich
+          labels: {2022: "Oberösterreich", 2025: "Oberösterreich"}
+        - id: salzburg
+          labels: {2022: "Salzburg", 2025: "Salzburg"}
+        - id: steiermark
+          labels: {2022: "Steiermark", 2025: "Steiermark"}
+        - id: tirol
+          labels: {2022: "Tirol", 2025: "Tirol"}
+        - id: vorarlberg
+          labels: {2022: "Vorarlberg", 2025: "Vorarlberg"}
+        - id: wien
+          labels: {2022: "Wien", 2025: "Wien"}
+
+    - id: freq_of_volunteering
+      label: "Frequency of Volunteering"
+      available_in: [2006, 2012, 2016, 2022]   # NOT available in 2025
+      categories:
+        - id: weekly
+          labels: {2022: "mind. 1x pro Woche"}
+        - id: monthly
+          labels: {2022: "mind. 1x pro Monat"}
+        - id: yearly
+          labels: {2022: "mind. 1x pro Jahr"}
+        - id: never
+          labels: {2022: "nie"}

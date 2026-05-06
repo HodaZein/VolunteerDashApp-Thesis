@@ -1,0 +1,98 @@
+# Survey wave manifest
+# Documents each release, its source file, and all changes from the previous wave.
+
+survey_waves:
+  - year: 2006
+    released: null
+    source: null
+    data_status: synthetic   # no source file available; synthetic data used for time-series
+
+  - year: 2012
+    released: null
+    source: null
+    data_status: synthetic
+
+  - year: 2016
+    released: null
+    source: null
+    data_status: synthetic
+
+  - year: 2022
+    released: "2023-06-01"
+    source: "statistic data/2022 sheets/Freiwilligentaetigkeit_2022_Tabellenband - Copy.xls"
+    data_status: official
+    changes_from_previous: []   # 2022 is our baseline
+
+  - year: 2025
+    released: "2025-12-04"
+    source: "statistic data/2025/FA25_Tabellenband_final.ods"
+    data_status: official
+    changes_from_previous:
+
+      - type: item_removed
+        domain: motivations
+        field_id: important_cause
+        affected_charts: [motivations_barriers]
+        note: "Item removed from survey instrument in 2025."
+
+      - type: area_removed
+        domain: formal_areas
+        field_id: refugee_aid
+        affected_charts: [activity_bar, gender_comparison]
+        replaced_by: other_area
+        note: "Flüchtlingshilfe dropped; Anderer Bereich introduced as catch-all."
+
+      - type: area_introduced
+        domain: formal_areas
+        field_id: other_area
+        affected_charts: [activity_bar, gender_comparison]
+        note: "New catch-all area in 2025; not directly comparable to any 2022 area."
+
+      - type: area_removed
+        domain: informal_areas
+        field_id: refugee_support
+        affected_charts: [activity_bar, gender_comparison]
+        note: "Versorgung von Flüchtlingen dropped in 2025."
+
+      - type: area_renamed
+        domain: informal_areas
+        field_id: garden_support
+        old_label: "Gartenarbeit"
+        new_label: "Unterstützung im Garten"
+        affected_charts: [activity_bar, gender_comparison]
+        comparable: true
+
+      - type: area_renamed
+        domain: informal_areas
+        field_id: visit_services
+        old_label: "Besuche bei betreuungspflichtigen Personen"
+        new_label: "Besuchsdienste"
+        affected_charts: [activity_bar, gender_comparison]
+        comparable: true
+
+      - type: area_renamed
+        domain: informal_areas
+        field_id: tutoring
+        old_label: "Nachhilfeunterricht"
+        new_label: "Unbezahlter Nachhilfeunterricht"
+        affected_charts: [activity_bar, gender_comparison]
+        comparable: true
+
+      - type: dimension_removed
+        dimension_id: freq_of_volunteering
+        affected_charts: [activity_bar]
+        note: "Frequency-of-volunteering tables not published in 2025 wave."
+
+      - type: task_type_restructured
+        affected_charts: [error_bar]
+        note: >
+          2022 used 3 broad task categories (Leitungsfunktion, Kernaufgaben,
+          Unterstützende Aufgaben). 2025 uses 12 specific task types. The two
+          schemas are not comparable; TaskType demographic filter is unavailable
+          for cross-year analysis.
+
+      - type: table_numbering_changed
+        note: >
+          All table numbers shifted between 2022 and 2025 (e.g. motivations:
+          Tabelle 11 → Tabelle 9; time: Tabelle 12 → Tabelle 10). Parsing
+          scripts use table names from schema_YYYY.yaml, not hardcoded numbers.

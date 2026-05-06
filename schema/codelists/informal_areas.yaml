@@ -1,0 +1,99 @@
+# Codelist: Informal volunteering areas
+# null label = area not published in that wave.
+
+informal_areas:
+  - id: household_tasks
+    labels:
+      2006: "Verschiedene Hausarbeiten"
+      2012: "Verschiedene Hausarbeiten"
+      2016: "Verschiedene Hausarbeiten"
+      2022: "Verschiedene Hausarbeiten"
+      2025: "Verschiedene Hausarbeiten"
+
+  - id: repairs_crafts
+    labels:
+      2006: "Reparaturen, handwerkliche Arbeiten"
+      2012: "Reparaturen, handwerkliche Arbeiten"
+      2016: "Reparaturen, handwerkliche Arbeiten"
+      2022: "Reparaturen, handwerkliche Arbeiten"
+      2025: "Reparaturen, handwerkliche Arbeiten"
+
+  - id: garden_support
+    labels:
+      2006: "Gartenarbeit"
+      2012: "Gartenarbeit"
+      2016: "Gartenarbeit"
+      2022: "Gartenarbeit"
+      2025: "Unterstützung im Garten"   # renamed in 2025
+
+  - id: visit_services
+    labels:
+      2006: "Besuche bei betreuungspflichtigen Personen"
+      2012: "Besuche bei betreuungspflichtigen Personen"
+      2016: "Besuche bei betreuungspflichtigen Personen"
+      2022: "Besuche bei betreuungspflichtigen Personen"
+      2025: "Besuchsdienste"            # renamed in 2025
+
+  - id: care_dependent
+    labels:
+      2006: "Betreuung von pflegebedürftigen Personen"
+      2012: "Betreuung von pflegebedürftigen Personen"
+      2016: "Betreuung von pflegebedürftigen Personen"
+      2022: "Betreuung von pflegebedürftigen Personen"
+      2025: "Betreuung von pflegebedürftigen Personen"
+
+  - id: transport_services
+    labels:
+      2006: "Fahrtendienste"
+      2012: "Fahrtendienste"
+      2016: "Fahrtendienste"
+      2022: "Fahrtendienste"
+      2025: "Fahrtendienste"
+
+  - id: disaster_aid
+    labels:
+      2006: "Mithilfe bei Katastrophen"
+      2012: "Mithilfe bei Katastrophen"
+      2016: "Mithilfe bei Katastrophen"
+      2022: "Mithilfe bei Katastrophen"
+      2025: "Mithilfe bei Katastrophen"
+
+  - id: admin_paperwork
+    labels:
+      2006: "Amtswege und Schriftverkehr"
+      2012: "Amtswege und Schriftverkehr"
+      2016: "Amtswege und Schriftverkehr"
+      2022: "Amtswege und Schriftverkehr"
+      2025: "Amtswege und Schriftverkehr"
+
+  - id: tutoring
+    labels:
+      2006: "Nachhilfeunterricht"
+      2012: "Nachhilfeunterricht"
+      2016: "Nachhilfeunterricht"
+      2022: "Nachhilfeunterricht"
+      2025: "Unbezahlter Nachhilfeunterricht"  # renamed in 2025
+
+  - id: childcare
+    labels:
+      2006: "Kinderbetreuung"
+      2012: "Kinderbetreuung"
+      2016: "Kinderbetreuung"
+      2022: "Kinderbetreuung"
+      2025: "Kinderbetreuung"
+
+  - id: refugee_support
+    labels:
+      2006: null
+      2012: null
+      2016: null
+      2022: "Versorgung von Flüchtlingen"
+      2025: null   # removed in 2025
+
+  - id: other_informal
+    labels:
+      2006: "Andere Tätigkeit"
+      2012: "Andere Tätigkeit"
+      2016: "Andere Tätigkeit"
+      2022: "Andere Tätigkeit"
+      2025: "Andere Tätigkeit"

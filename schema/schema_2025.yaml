@@ -1,0 +1,78 @@
+# Year-specific schema: 2025
+# Maps logical chart names to their data files and declares available filters.
+
+year: 2025
+data_status: official
+source_file: "../statistic data/2025/FA25_Tabellenband_final.ods"
+
+# Table numbers shifted vs 2022 — informal moved from 8.x to 7.x,
+# motivations from 11.x to 9.x, time from 12.x to 10.x
+source_tables:
+  volunteering_general:    Tabelle1_1
+  formal_volunteering:     Tabelle2_1
+  informal_volunteering:   Tabelle2_2
+  formal_informal_split:   Tabelle2_3
+  formal_areas_overall:    Tabelle4_1
+  formal_areas_by_gender:  Tabelle4_3
+  formal_areas_by_age:     Tabelle4_4
+  formal_areas_by_edu:     Tabelle4_5
+  num_orgs:                Tabelle5_1
+  task_types:              Tabelle6_1
+  informal_areas_overall:  Tabelle7_1
+  informal_areas_by_gender: Tabelle7_2
+  informal_areas_by_age:   Tabelle7_3
+  informal_areas_by_edu:   Tabelle7_4
+  motivations:             Tabelle9_1
+  barriers:                Tabelle9_2
+  time_overall:            Tabelle10_1
+  time_by_gender:          Tabelle10_2
+  time_by_edu:             Tabelle10_4
+  time_by_migration:       Tabelle10_7
+  time_by_employment:      Tabelle10_8
+  time_by_municipality:    Tabelle10_9
+  time_by_region:          Tabelle10_10
+
+data_files:
+  geo_regions:         "assets/data/geo_regions.csv"
+  volunteering_trends: "assets/data/volunteering_trends.csv"
+  formal_areas:        "assets/data/formal_areas.csv"
+  informal_areas:      "assets/data/informal_areas.csv"
+  motivations:         "assets/data/motivations.csv"
+  barriers:            "assets/data/barriers.csv"
+  time_distribution:   "assets/data/time_distribution.csv"
+  gender_comparison:   "assets/data/gender_comparison.csv"
+
+# Freq_of_volunteering and TaskType are absent compared to 2022
+available_filters:
+  activity_bar:
+    vol_types: [formal, informal]
+    demographics: [Gender, Age, Education]
+    unavailable_demographics:
+      - id: Freq_of_volunteering
+        reason: "Frequency-of-volunteering tables not published in 2025 survey release."
+
+  error_bar:
+    vol_types: [Total, Formal, Informal]
+    demographics: [Total, Gender, Age, Education, MigrationBackground,
+                   Employment, MunicipalitySize, Region]
+    unavailable_demographics:
+      - id: TaskType
+        reason: "Time-by-task-type table not published in 2025. Task type schema also restructured (3→12 categories); not comparable with 2022."
+
+  gender_comparison:
+    vol_types: [Formal, Informal]
+    dimensions:
+      Formal:   [Formal_NumberOfOrgs, Formal_TaskTypes, Formal_Areas, Formal_Time/week]
+      Informal: [Informal_Areas, Informal_Time/week]
+
+  motivations_barriers:
+    types: [motivation, barrier]
+    genders: [all, men, women]
+    unavailable_items:
+      - id: important_cause
+        type: motivation
+        reason: "Item removed from survey instrument in 2025."
+
+  choropleth:
+    vol_types: [perc_volunteers_from_pop, perc_formal_from_pop, perc_informal_from_pop]
+    stat_types: [perc, avg_hours, median_hours]

@@ -1,0 +1,92 @@
+# Codelist: Formal volunteering areas
+# Stable IDs decouple identity from label — label can change per year without breaking the app.
+# null label means the area was not published in that survey wave.
+
+formal_areas:
+  - id: disaster_rescue
+    labels:
+      2006: "Katastrophenhilfs- und Rettungsdienste"
+      2012: "Katastrophenhilfs- und Rettungsdienste"
+      2016: "Katastrophenhilfs- und Rettungsdienste"
+      2022: "Katastrophenhilfs- und Rettungsdienste"
+      2025: "Katastrophenhilfs- und Rettungsdienste"
+
+  - id: arts_culture
+    labels:
+      2006: "Kunst, Kultur, Unterhaltung"
+      2012: "Kunst, Kultur, Unterhaltung"
+      2016: "Kunst, Kultur, Unterhaltung"
+      2022: "Kunst, Kultur, Unterhaltung"
+      2025: "Kunst, Kultur, Unterhaltung"
+
+  - id: environment_nature
+    labels:
+      2006: "Umwelt, Natur und Tierschutz"
+      2012: "Umwelt, Natur und Tierschutz"
+      2016: "Umwelt, Natur und Tierschutz"
+      2022: "Umwelt, Natur und Tierschutz"
+      2025: "Umwelt, Natur und Tierschutz"
+
+  - id: religion_church
+    labels:
+      2006: "Religion und Kirche"
+      2012: "Religion und Kirche"
+      2016: "Religion und Kirche"
+      2022: "Religion und Kirche"
+      2025: "Religion und Kirche"
+
+  - id: social_health
+    labels:
+      2006: "Soziales und Gesundheit"
+      2012: "Soziales und Gesundheit"
+      2016: "Soziales und Gesundheit"
+      2022: "Soziales und Gesundheit"
+      2025: "Soziales und Gesundheit"
+
+  - id: politics_advocacy
+    labels:
+      2006: "Politische Arbeit und Interessensvertretung"
+      2012: "Politische Arbeit und Interessensvertretung"
+      2016: "Politische Arbeit und Interessensvertretung"
+      2022: "Politische Arbeit und Interessensvertretung"
+      2025: "Politische Arbeit und Interessensvertretung"
+
+  - id: civic_community
+    labels:
+      2006: "Bürgerliche Aktivitäten und Gemeinwesen"
+      2012: "Bürgerliche Aktivitäten und Gemeinwesen"
+      2016: "Bürgerliche Aktivitäten und Gemeinwesen"
+      2022: "Bürgerliche Aktivitäten und Gemeinwesen"
+      2025: "Bürgerliche Aktivitäten und Gemeinwesen"
+
+  - id: education
+    labels:
+      2006: "Bildung"
+      2012: "Bildung"
+      2016: "Bildung"
+      2022: "Bildung"
+      2025: "Bildung"
+
+  - id: sports
+    labels:
+      2006: "Sport und Bewegung"
+      2012: "Sport und Bewegung"
+      2016: "Sport und Bewegung"
+      2022: "Sport und Bewegung"
+      2025: "Sport und Bewegung"
+
+  - id: refugee_aid
+    labels:
+      2006: null
+      2012: null
+      2016: null
+      2022: "Flüchtlingshilfe"
+      2025: null      # removed in 2025; subsumed into other_area
+
+  - id: other_area
+    labels:
+      2006: null
+      2012: null
+      2016: null
+      2022: null
+      2025: "Anderer Bereich"   # introduced in 2025; partially replaces refugee_aid
