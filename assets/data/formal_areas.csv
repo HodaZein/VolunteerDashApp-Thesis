@@ -1,421 +1,561 @@
 year,area_id,demographic,category,count_1000,percentage
-2022,disaster_rescue,all,all,428.3,22.0
-2022,arts_culture,all,all,420.6,21.6
-2022,environment_nature,all,all,208.9,10.7
-2022,religion_church,all,all,389.2,20.0
-2022,social_health,all,all,306.0,15.7
-2022,politics_advocacy,all,all,233.2,12.0
-2022,civic_community,all,all,281.7,14.5
-2022,education,all,all,151.0,7.8
-2022,sports,all,all,579.7,29.8
-2022,refugee_aid,all,all,93.6,4.8
-2022,disaster_rescue,gender,male,339.0,30.0
-2022,arts_culture,gender,male,234.0,20.7
-2022,environment_nature,gender,male,119.1,10.5
-2022,religion_church,gender,male,156.5,13.8
-2022,social_health,gender,male,130.3,11.5
-2022,politics_advocacy,gender,male,156.9,13.9
-2022,civic_community,gender,male,167.8,14.8
-2022,education,gender,male,68.0,6.0
-2022,sports,gender,male,400.5,35.4
-2022,refugee_aid,gender,male,41.9,3.7
-2022,disaster_rescue,gender,female,89.2,10.9
-2022,arts_culture,gender,female,186.6,22.8
-2022,environment_nature,gender,female,89.8,11.0
-2022,religion_church,gender,female,232.7,28.5
-2022,social_health,gender,female,175.7,21.5
-2022,politics_advocacy,gender,female,76.3,9.3
-2022,civic_community,gender,female,113.9,13.9
-2022,education,gender,female,83.0,10.2
-2022,sports,gender,female,179.2,21.9
-2022,refugee_aid,gender,female,51.7,6.3
-2025,disaster_rescue,all,all,434.5,23.342645320726334
-2025,arts_culture,all,all,399.6,21.467712474481573
-2025,environment_nature,all,all,176.1,9.46062103792844
-2025,religion_church,all,all,329.9,17.723219082411088
-2025,social_health,all,all,269.3,14.467605028473193
-2025,politics_advocacy,all,all,187.3,10.062318684860855
-2025,civic_community,all,all,220.0,11.81906092188675
-2025,education,all,all,189.9,10.201998495755882
-2025,sports,all,all,516.5,27.747931664338672
-2025,other_area,all,all,93.6,5.0284731922209085
-2025,disaster_rescue,gender,male,330.1,30.94300712410949
-2025,arts_culture,gender,male,195.1,18.28833895763029
-2025,environment_nature,gender,male,96.8,9.073865766779154
-2025,religion_church,gender,male,140.3,13.151481064866893
-2025,social_health,gender,male,97.0,9.092613423322083
-2025,politics_advocacy,gender,male,130.9,12.270341207349082
-2025,civic_community,gender,male,122.1,11.445444319460067
-2025,education,gender,male,68.3,6.402324709411324
-2025,sports,gender,male,346.4,32.470941132358455
-2025,other_area,gender,male,54.0,5.061867266591676
-2025,disaster_rescue,gender,female,104.3,13.12610118298515
-2025,arts_culture,gender,female,204.5,25.73621948150013
-2025,environment_nature,gender,female,79.3,9.97986408255726
-2025,religion_church,gender,female,189.7,23.87364711804681
-2025,social_health,gender,female,172.3,21.683866096149007
-2025,politics_advocacy,gender,female,56.4,7.097910898565315
-2025,civic_community,gender,female,98.0,12.333249433677322
-2025,education,gender,female,121.6,15.303297256481246
-2025,sports,gender,female,170.1,21.40699723131135
-2025,other_area,gender,female,39.6,4.983639567077775
-2006,disaster_rescue,all,all,268.8,
-2006,arts_culture,all,all,263.9,
-2006,environment_nature,all,all,131.1,
-2006,religion_church,all,all,244.2,
-2006,social_health,all,all,192.0,
-2006,politics_advocacy,all,all,146.3,
-2006,civic_community,all,all,176.8,
-2006,education,all,all,94.8,
-2006,sports,all,all,363.8,
-2006,refugee_aid,all,all,58.7,
-2006,disaster_rescue,gender,male,361.8,
-2006,arts_culture,gender,male,249.7,
-2006,environment_nature,gender,male,127.1,
-2006,religion_church,gender,male,167.0,
-2006,social_health,gender,male,139.1,
-2006,politics_advocacy,gender,male,167.5,
-2006,civic_community,gender,male,179.1,
-2006,education,gender,male,72.6,
-2006,sports,gender,male,427.5,
-2006,refugee_aid,gender,male,44.7,
-2006,disaster_rescue,gender,female,88.8,
-2006,arts_culture,gender,female,185.9,
-2006,environment_nature,gender,female,89.4,
-2006,religion_church,gender,female,231.8,
-2006,social_health,gender,female,175.0,
-2006,politics_advocacy,gender,female,76.0,
-2006,civic_community,gender,female,113.4,
-2006,education,gender,female,82.7,
-2006,sports,gender,female,178.5,
-2006,refugee_aid,gender,female,51.5,
-2006,disaster_rescue,age_group,40-59,158.2,
-2006,arts_culture,age_group,40-59,171.9,
-2006,environment_nature,age_group,40-59,84.3,
-2006,religion_church,age_group,40-59,168.4,
-2006,social_health,age_group,40-59,125.9,
-2006,politics_advocacy,age_group,40-59,112.0,
-2006,civic_community,age_group,40-59,135.1,
-2006,education,age_group,40-59,59.2,
-2006,sports,age_group,40-59,264.7,
-2006,refugee_aid,age_group,40-59,38.0,
-2006,disaster_rescue,age_group,<40,173.7,
-2006,arts_culture,age_group,<40,140.0,
-2006,environment_nature,age_group,<40,63.1,
-2006,religion_church,age_group,<40,96.8,
-2006,social_health,age_group,<40,81.5,
-2006,politics_advocacy,age_group,<40,64.5,
-2006,civic_community,age_group,<40,74.4,
-2006,education,age_group,<40,49.4,
-2006,sports,age_group,<40,198.7,
-2006,refugee_aid,age_group,<40,27.1,
-2006,disaster_rescue,age_group,>=60,83.1,
-2006,arts_culture,age_group,>=60,100.4,
-2006,environment_nature,age_group,>=60,57.7,
-2006,religion_church,age_group,>=60,120.3,
-2006,social_health,age_group,>=60,94.2,
-2006,politics_advocacy,age_group,>=60,55.4,
-2006,civic_community,age_group,>=60,70.5,
-2006,education,age_group,>=60,39.3,
-2006,sports,age_group,>=60,107.7,
-2006,refugee_aid,age_group,>=60,27.0,
-2006,disaster_rescue,education,(at least) Matura,138.9,
-2006,arts_culture,education,(at least) Matura,220.1,
-2006,environment_nature,education,(at least) Matura,95.6,
-2006,religion_church,education,(at least) Matura,188.2,
-2006,social_health,education,(at least) Matura,146.2,
-2006,politics_advocacy,education,(at least) Matura,107.2,
-2006,civic_community,education,(at least) Matura,117.4,
-2006,education,education,(at least) Matura,111.4,
-2006,sports,education,(at least) Matura,275.5,
-2006,refugee_aid,education,(at least) Matura,58.7,
-2006,disaster_rescue,education,No Matura,278.4,
-2006,arts_culture,education,No Matura,197.7,
-2006,environment_nature,education,No Matura,110.5,
-2006,religion_church,education,No Matura,197.0,
-2006,social_health,education,No Matura,156.4,
-2006,politics_advocacy,education,No Matura,123.1,
-2006,civic_community,education,No Matura,159.6,
-2006,education,education,No Matura,41.8,
-2006,sports,education,No Matura,297.8,
-2006,refugee_aid,education,No Matura,35.3,
-2006,disaster_rescue,freq_of_volunteering,at least once a month,213.0,
-2006,arts_culture,freq_of_volunteering,at least once a month,186.8,
-2006,environment_nature,freq_of_volunteering,at least once a month,71.2,
-2006,religion_church,freq_of_volunteering,at least once a month,172.4,
-2006,social_health,freq_of_volunteering,at least once a month,142.2,
-2006,politics_advocacy,freq_of_volunteering,at least once a month,101.8,
-2006,civic_community,freq_of_volunteering,at least once a month,108.1,
-2006,education,freq_of_volunteering,at least once a month,62.5,
-2006,sports,freq_of_volunteering,at least once a month,198.3,
-2006,refugee_aid,freq_of_volunteering,at least once a month,28.7,
-2006,disaster_rescue,freq_of_volunteering,at least once a week,110.2,
-2006,arts_culture,freq_of_volunteering,at least once a week,120.7,
-2006,environment_nature,freq_of_volunteering,at least once a week,51.6,
-2006,religion_church,freq_of_volunteering,at least once a week,105.6,
-2006,social_health,freq_of_volunteering,at least once a week,80.2,
-2006,politics_advocacy,freq_of_volunteering,at least once a week,55.6,
-2006,civic_community,freq_of_volunteering,at least once a week,56.5,
-2006,education,freq_of_volunteering,at least once a week,43.2,
-2006,sports,freq_of_volunteering,at least once a week,223.9,
-2006,refugee_aid,freq_of_volunteering,at least once a week,25.6,
-2006,disaster_rescue,freq_of_volunteering,at least once a year,80.4,
-2006,arts_culture,freq_of_volunteering,at least once a year,89.0,
-2006,environment_nature,freq_of_volunteering,at least once a year,65.9,
-2006,religion_church,freq_of_volunteering,at least once a year,99.0,
-2006,social_health,freq_of_volunteering,at least once a year,69.1,
-2006,politics_advocacy,freq_of_volunteering,at least once a year,62.3,
-2006,civic_community,freq_of_volunteering,at least once a year,87.9,
-2006,education,freq_of_volunteering,at least once a year,29.0,
-2006,sports,freq_of_volunteering,at least once a year,121.9,
-2006,refugee_aid,freq_of_volunteering,at least once a year,24.9,
-2006,environment_nature,freq_of_volunteering,at least once a year,18.0,
-2006,disaster_rescue,freq_of_volunteering,none,44.9,
-2006,arts_culture,freq_of_volunteering,none,38.9,
-2006,religion_church,freq_of_volunteering,none,24.7,
-2006,social_health,freq_of_volunteering,none,24.1,
-2006,politics_advocacy,freq_of_volunteering,none,19.8,
-2006,civic_community,freq_of_volunteering,none,32.6,
-2006,education,freq_of_volunteering,none,0.0,
-2006,sports,freq_of_volunteering,none,57.4,
-2006,refugee_aid,freq_of_volunteering,none,0.0,
-2012,disaster_rescue,all,all,234.1,
-2012,arts_culture,all,all,229.8,
-2012,environment_nature,all,all,114.2,
-2012,religion_church,all,all,212.7,
-2012,social_health,all,all,167.2,
-2012,politics_advocacy,all,all,127.4,
-2012,civic_community,all,all,153.9,
-2012,education,all,all,82.5,
-2012,sports,all,all,316.8,
-2012,refugee_aid,all,all,51.1,
-2012,disaster_rescue,gender,male,384.9,
-2012,arts_culture,gender,male,265.7,
-2012,environment_nature,gender,male,135.2,
-2012,religion_church,gender,male,177.7,
-2012,social_health,gender,male,148.0,
-2012,politics_advocacy,gender,male,178.2,
-2012,civic_community,gender,male,190.5,
-2012,education,gender,male,77.2,
-2012,sports,gender,male,454.8,
-2012,refugee_aid,gender,male,47.6,
-2012,disaster_rescue,gender,female,90.8,
-2012,arts_culture,gender,female,189.9,
-2012,environment_nature,gender,female,91.4,
-2012,religion_church,gender,female,236.9,
-2012,social_health,gender,female,178.8,
-2012,politics_advocacy,gender,female,77.7,
-2012,civic_community,gender,female,115.9,
-2012,education,gender,female,84.5,
-2012,sports,gender,female,182.4,
-2012,refugee_aid,gender,female,52.6,
-2012,disaster_rescue,age_group,40-59,143.5,
-2012,arts_culture,age_group,40-59,155.8,
-2012,environment_nature,age_group,40-59,76.4,
-2012,religion_church,age_group,40-59,152.7,
-2012,social_health,age_group,40-59,114.2,
-2012,politics_advocacy,age_group,40-59,101.5,
-2012,civic_community,age_group,40-59,122.5,
-2012,education,age_group,40-59,53.6,
-2012,sports,age_group,40-59,239.9,
-2012,refugee_aid,age_group,40-59,34.4,
-2012,disaster_rescue,age_group,<40,223.5,
-2012,arts_culture,age_group,<40,180.1,
-2012,environment_nature,age_group,<40,81.3,
-2012,religion_church,age_group,<40,124.6,
-2012,social_health,age_group,<40,104.9,
-2012,politics_advocacy,age_group,<40,83.0,
-2012,civic_community,age_group,<40,95.8,
-2012,education,age_group,<40,63.5,
-2012,sports,age_group,<40,255.7,
-2012,refugee_aid,age_group,<40,34.9,
-2012,disaster_rescue,age_group,>=60,93.5,
-2012,arts_culture,age_group,>=60,113.0,
-2012,environment_nature,age_group,>=60,64.9,
-2012,religion_church,age_group,>=60,135.4,
-2012,social_health,age_group,>=60,106.1,
-2012,politics_advocacy,age_group,>=60,62.3,
-2012,civic_community,age_group,>=60,79.4,
-2012,education,age_group,>=60,44.2,
-2012,sports,age_group,>=60,121.2,
-2012,refugee_aid,age_group,>=60,30.4,
-2012,disaster_rescue,education,(at least) Matura,140.6,
-2012,arts_culture,education,(at least) Matura,222.8,
-2012,environment_nature,education,(at least) Matura,96.8,
-2012,religion_church,education,(at least) Matura,190.5,
-2012,social_health,education,(at least) Matura,148.0,
-2012,politics_advocacy,education,(at least) Matura,108.5,
-2012,civic_community,education,(at least) Matura,118.8,
-2012,education,education,(at least) Matura,112.7,
-2012,sports,education,(at least) Matura,278.9,
-2012,refugee_aid,education,(at least) Matura,59.4,
-2012,disaster_rescue,education,No Matura,267.8,
-2012,arts_culture,education,No Matura,190.2,
-2012,environment_nature,education,No Matura,106.4,
-2012,religion_church,education,No Matura,189.6,
-2012,social_health,education,No Matura,150.5,
-2012,politics_advocacy,education,No Matura,118.4,
-2012,civic_community,education,No Matura,153.5,
-2012,education,education,No Matura,40.2,
-2012,sports,education,No Matura,286.5,
-2012,refugee_aid,education,No Matura,33.9,
-2012,disaster_rescue,freq_of_volunteering,at least once a month,183.5,
-2012,arts_culture,freq_of_volunteering,at least once a month,160.9,
-2012,environment_nature,freq_of_volunteering,at least once a month,61.4,
-2012,religion_church,freq_of_volunteering,at least once a month,148.5,
-2012,social_health,freq_of_volunteering,at least once a month,122.5,
-2012,politics_advocacy,freq_of_volunteering,at least once a month,87.7,
-2012,civic_community,freq_of_volunteering,at least once a month,93.1,
-2012,education,freq_of_volunteering,at least once a month,53.8,
-2012,sports,freq_of_volunteering,at least once a month,170.8,
-2012,refugee_aid,freq_of_volunteering,at least once a month,24.7,
-2012,disaster_rescue,freq_of_volunteering,at least once a week,104.5,
-2012,arts_culture,freq_of_volunteering,at least once a week,114.5,
-2012,environment_nature,freq_of_volunteering,at least once a week,49.0,
-2012,religion_church,freq_of_volunteering,at least once a week,100.2,
-2012,social_health,freq_of_volunteering,at least once a week,76.1,
-2012,politics_advocacy,freq_of_volunteering,at least once a week,52.7,
-2012,civic_community,freq_of_volunteering,at least once a week,53.6,
-2012,education,freq_of_volunteering,at least once a week,41.0,
-2012,sports,freq_of_volunteering,at least once a week,212.5,
-2012,refugee_aid,freq_of_volunteering,at least once a week,24.3,
-2012,disaster_rescue,freq_of_volunteering,at least once a year,105.2,
-2012,arts_culture,freq_of_volunteering,at least once a year,116.5,
-2012,environment_nature,freq_of_volunteering,at least once a year,86.2,
-2012,religion_church,freq_of_volunteering,at least once a year,129.6,
-2012,social_health,freq_of_volunteering,at least once a year,90.5,
-2012,politics_advocacy,freq_of_volunteering,at least once a year,81.6,
-2012,civic_community,freq_of_volunteering,at least once a year,115.1,
-2012,education,freq_of_volunteering,at least once a year,37.9,
-2012,sports,freq_of_volunteering,at least once a year,159.5,
-2012,refugee_aid,freq_of_volunteering,at least once a year,32.6,
-2012,environment_nature,freq_of_volunteering,at least once a year,23.6,
-2012,disaster_rescue,freq_of_volunteering,none,39.0,
-2012,arts_culture,freq_of_volunteering,none,33.8,
-2012,religion_church,freq_of_volunteering,none,21.4,
-2012,social_health,freq_of_volunteering,none,21.0,
-2012,politics_advocacy,freq_of_volunteering,none,17.2,
-2012,civic_community,freq_of_volunteering,none,28.3,
-2012,education,freq_of_volunteering,none,0.0,
-2012,sports,freq_of_volunteering,none,49.8,
-2012,refugee_aid,freq_of_volunteering,none,0.0,
-2016,disaster_rescue,all,all,237.6,
-2016,arts_culture,all,all,233.3,
-2016,environment_nature,all,all,115.9,
-2016,religion_church,all,all,215.9,
-2016,social_health,all,all,169.8,
-2016,politics_advocacy,all,all,129.4,
-2016,civic_community,all,all,156.3,
-2016,education,all,all,83.8,
-2016,sports,all,all,321.6,
-2016,refugee_aid,all,all,51.9,
-2016,disaster_rescue,gender,male,372.2,
-2016,arts_culture,gender,male,256.9,
-2016,environment_nature,gender,male,130.8,
-2016,religion_church,gender,male,171.8,
-2016,social_health,gender,male,143.1,
-2016,politics_advocacy,gender,male,172.3,
-2016,civic_community,gender,male,184.2,
-2016,education,gender,male,74.7,
-2016,sports,gender,male,439.7,
-2016,refugee_aid,gender,male,46.0,
-2016,disaster_rescue,gender,female,99.1,
-2016,arts_culture,gender,female,207.3,
-2016,environment_nature,gender,female,99.7,
-2016,religion_church,gender,female,258.5,
-2016,social_health,gender,female,195.2,
-2016,politics_advocacy,gender,female,84.8,
-2016,civic_community,gender,female,126.5,
-2016,education,gender,female,92.2,
-2016,sports,gender,female,199.0,
-2016,refugee_aid,gender,female,57.4,
-2016,disaster_rescue,age_group,40-59,133.4,
-2016,arts_culture,age_group,40-59,144.9,
-2016,environment_nature,age_group,40-59,71.0,
-2016,religion_church,age_group,40-59,141.9,
-2016,social_health,age_group,40-59,106.1,
-2016,politics_advocacy,age_group,40-59,94.4,
-2016,civic_community,age_group,40-59,113.9,
-2016,education,age_group,40-59,49.8,
-2016,sports,age_group,40-59,223.0,
-2016,refugee_aid,age_group,40-59,32.0,
-2016,disaster_rescue,age_group,<40,214.5,
-2016,arts_culture,age_group,<40,172.8,
-2016,environment_nature,age_group,<40,78.0,
-2016,religion_church,age_group,<40,119.5,
-2016,social_health,age_group,<40,100.6,
-2016,politics_advocacy,age_group,<40,79.6,
-2016,civic_community,age_group,<40,91.9,
-2016,education,age_group,<40,60.9,
-2016,sports,age_group,<40,245.3,
-2016,refugee_aid,age_group,<40,33.5,
-2016,disaster_rescue,age_group,>=60,87.6,
-2016,arts_culture,age_group,>=60,105.8,
-2016,environment_nature,age_group,>=60,60.8,
-2016,religion_church,age_group,>=60,126.7,
-2016,social_health,age_group,>=60,99.3,
-2016,politics_advocacy,age_group,>=60,58.4,
-2016,civic_community,age_group,>=60,74.3,
-2016,education,age_group,>=60,41.4,
-2016,sports,age_group,>=60,113.5,
-2016,refugee_aid,age_group,>=60,28.4,
-2016,disaster_rescue,education,(at least) Matura,151.6,
-2016,arts_culture,education,(at least) Matura,240.2,
-2016,environment_nature,education,(at least) Matura,104.3,
-2016,religion_church,education,(at least) Matura,205.3,
-2016,social_health,education,(at least) Matura,159.5,
-2016,politics_advocacy,education,(at least) Matura,117.0,
-2016,civic_community,education,(at least) Matura,128.1,
-2016,education,education,(at least) Matura,121.5,
-2016,sports,education,(at least) Matura,300.6,
-2016,refugee_aid,education,(at least) Matura,64.0,
-2016,disaster_rescue,education,No Matura,272.4,
-2016,arts_culture,education,No Matura,193.5,
-2016,environment_nature,education,No Matura,108.2,
-2016,religion_church,education,No Matura,192.8,
-2016,social_health,education,No Matura,153.0,
-2016,politics_advocacy,education,No Matura,120.5,
-2016,civic_community,education,No Matura,156.2,
-2016,education,education,No Matura,40.9,
-2016,sports,education,No Matura,291.4,
-2016,refugee_aid,education,No Matura,34.5,
-2016,disaster_rescue,freq_of_volunteering,at least once a month,193.3,
-2016,arts_culture,freq_of_volunteering,at least once a month,169.5,
-2016,environment_nature,freq_of_volunteering,at least once a month,64.7,
-2016,religion_church,freq_of_volunteering,at least once a month,156.5,
-2016,social_health,freq_of_volunteering,at least once a month,129.1,
-2016,politics_advocacy,freq_of_volunteering,at least once a month,92.4,
-2016,civic_community,freq_of_volunteering,at least once a month,98.1,
-2016,education,freq_of_volunteering,at least once a month,56.7,
-2016,sports,freq_of_volunteering,at least once a month,180.0,
-2016,refugee_aid,freq_of_volunteering,at least once a month,26.0,
-2016,disaster_rescue,freq_of_volunteering,at least once a week,113.3,
-2016,arts_culture,freq_of_volunteering,at least once a week,124.1,
-2016,environment_nature,freq_of_volunteering,at least once a week,53.1,
-2016,religion_church,freq_of_volunteering,at least once a week,108.6,
-2016,social_health,freq_of_volunteering,at least once a week,82.5,
-2016,politics_advocacy,freq_of_volunteering,at least once a week,57.2,
-2016,civic_community,freq_of_volunteering,at least once a week,58.1,
-2016,education,freq_of_volunteering,at least once a week,44.4,
-2016,sports,freq_of_volunteering,at least once a week,230.4,
-2016,refugee_aid,freq_of_volunteering,at least once a week,26.4,
-2016,disaster_rescue,freq_of_volunteering,at least once a year,81.8,
-2016,arts_culture,freq_of_volunteering,at least once a year,90.6,
-2016,environment_nature,freq_of_volunteering,at least once a year,67.0,
-2016,religion_church,freq_of_volunteering,at least once a year,100.7,
-2016,social_health,freq_of_volunteering,at least once a year,70.3,
-2016,politics_advocacy,freq_of_volunteering,at least once a year,63.4,
-2016,civic_community,freq_of_volunteering,at least once a year,89.4,
-2016,education,freq_of_volunteering,at least once a year,29.5,
-2016,sports,freq_of_volunteering,at least once a year,124.0,
-2016,refugee_aid,freq_of_volunteering,at least once a year,25.3,
-2016,environment_nature,freq_of_volunteering,at least once a year,18.3,
-2016,disaster_rescue,freq_of_volunteering,none,39.4,
-2016,arts_culture,freq_of_volunteering,none,34.2,
-2016,religion_church,freq_of_volunteering,none,21.7,
-2016,social_health,freq_of_volunteering,none,21.2,
-2016,politics_advocacy,freq_of_volunteering,none,17.4,
-2016,civic_community,freq_of_volunteering,none,28.6,
-2016,education,freq_of_volunteering,none,0.0,
-2016,sports,freq_of_volunteering,none,50.4,
-2016,refugee_aid,freq_of_volunteering,none,0.0,
+2006,disaster_rescue,all,all,268.8,13.85
+2006,arts_culture,all,all,263.9,13.60
+2006,environment_nature,all,all,131.1,6.76
+2006,religion_church,all,all,244.2,12.59
+2006,social_health,all,all,192.0,9.89
+2006,politics_advocacy,all,all,146.3,7.54
+2006,civic_community,all,all,176.8,9.11
+2006,education,all,all,94.8,4.89
+2006,sports,all,all,363.8,18.75
+2006,refugee_aid,all,all,58.7,3.03
+2006,disaster_rescue,gender,male,361.8,18.65
+2006,arts_culture,gender,male,249.7,12.87
+2006,environment_nature,gender,male,127.1,6.55
+2006,religion_church,gender,male,167.0,8.61
+2006,social_health,gender,male,139.1,7.17
+2006,politics_advocacy,gender,male,167.5,8.63
+2006,civic_community,gender,male,179.1,9.23
+2006,education,gender,male,72.6,3.74
+2006,sports,gender,male,427.5,22.03
+2006,refugee_aid,gender,male,44.7,2.30
+2006,disaster_rescue,gender,female,88.8,4.58
+2006,arts_culture,gender,female,185.9,9.58
+2006,environment_nature,gender,female,89.4,4.61
+2006,religion_church,gender,female,231.8,11.95
+2006,social_health,gender,female,175.0,9.02
+2006,politics_advocacy,gender,female,76.0,3.92
+2006,civic_community,gender,female,113.4,5.84
+2006,education,gender,female,82.7,4.26
+2006,sports,gender,female,178.5,9.20
+2006,refugee_aid,gender,female,51.5,2.65
+2006,disaster_rescue,age_group,<40,173.7,8.95
+2006,arts_culture,age_group,<40,140.0,7.22
+2006,environment_nature,age_group,<40,63.1,3.25
+2006,religion_church,age_group,<40,96.8,4.99
+2006,social_health,age_group,<40,81.5,4.20
+2006,politics_advocacy,age_group,<40,64.5,3.32
+2006,civic_community,age_group,<40,74.4,3.83
+2006,education,age_group,<40,49.4,2.55
+2006,sports,age_group,<40,198.7,10.24
+2006,refugee_aid,age_group,<40,27.1,1.40
+2006,disaster_rescue,age_group,40-59,158.2,8.15
+2006,arts_culture,age_group,40-59,171.9,8.86
+2006,environment_nature,age_group,40-59,84.3,4.34
+2006,religion_church,age_group,40-59,168.4,8.68
+2006,social_health,age_group,40-59,125.9,6.49
+2006,politics_advocacy,age_group,40-59,112.0,5.77
+2006,civic_community,age_group,40-59,135.1,6.96
+2006,education,age_group,40-59,59.2,3.05
+2006,sports,age_group,40-59,264.7,13.64
+2006,refugee_aid,age_group,40-59,38.0,1.96
+2006,disaster_rescue,age_group,>=60,83.1,4.28
+2006,arts_culture,age_group,>=60,100.4,5.17
+2006,environment_nature,age_group,>=60,57.7,2.97
+2006,religion_church,age_group,>=60,120.3,6.20
+2006,social_health,age_group,>=60,94.2,4.85
+2006,politics_advocacy,age_group,>=60,55.4,2.86
+2006,civic_community,age_group,>=60,70.5,3.63
+2006,education,age_group,>=60,39.3,2.03
+2006,sports,age_group,>=60,107.7,5.55
+2006,refugee_aid,age_group,>=60,27.0,1.39
+2006,disaster_rescue,education,No Matura,278.4,14.35
+2006,arts_culture,education,No Matura,197.7,10.19
+2006,environment_nature,education,No Matura,110.5,5.69
+2006,religion_church,education,No Matura,197.0,10.15
+2006,social_health,education,No Matura,156.4,8.06
+2006,politics_advocacy,education,No Matura,123.1,6.34
+2006,civic_community,education,No Matura,159.6,8.23
+2006,education,education,No Matura,41.8,2.15
+2006,sports,education,No Matura,297.8,15.35
+2006,refugee_aid,education,No Matura,35.3,1.82
+2006,disaster_rescue,education,(at least) Matura,138.9,7.16
+2006,arts_culture,education,(at least) Matura,220.1,11.34
+2006,environment_nature,education,(at least) Matura,95.6,4.93
+2006,religion_church,education,(at least) Matura,188.2,9.70
+2006,social_health,education,(at least) Matura,146.2,7.53
+2006,politics_advocacy,education,(at least) Matura,107.2,5.52
+2006,civic_community,education,(at least) Matura,117.4,6.05
+2006,education,education,(at least) Matura,111.4,5.74
+2006,sports,education,(at least) Matura,275.5,14.20
+2006,refugee_aid,education,(at least) Matura,58.7,3.03
+2006,disaster_rescue,freq_of_volunteering,at least once a month,213.0,10.98
+2006,arts_culture,freq_of_volunteering,at least once a month,186.8,9.63
+2006,environment_nature,freq_of_volunteering,at least once a month,71.2,3.67
+2006,religion_church,freq_of_volunteering,at least once a month,172.4,8.88
+2006,social_health,freq_of_volunteering,at least once a month,142.2,7.33
+2006,politics_advocacy,freq_of_volunteering,at least once a month,101.8,5.25
+2006,civic_community,freq_of_volunteering,at least once a month,108.1,5.57
+2006,education,freq_of_volunteering,at least once a month,62.5,3.22
+2006,sports,freq_of_volunteering,at least once a month,198.3,10.22
+2006,refugee_aid,freq_of_volunteering,at least once a month,28.7,1.48
+2006,disaster_rescue,freq_of_volunteering,at least once a week,110.2,5.68
+2006,arts_culture,freq_of_volunteering,at least once a week,120.7,6.22
+2006,environment_nature,freq_of_volunteering,at least once a week,51.6,2.66
+2006,religion_church,freq_of_volunteering,at least once a week,105.6,5.44
+2006,social_health,freq_of_volunteering,at least once a week,80.2,4.13
+2006,politics_advocacy,freq_of_volunteering,at least once a week,55.6,2.87
+2006,civic_community,freq_of_volunteering,at least once a week,56.5,2.91
+2006,education,freq_of_volunteering,at least once a week,43.2,2.23
+2006,sports,freq_of_volunteering,at least once a week,223.9,11.54
+2006,refugee_aid,freq_of_volunteering,at least once a week,25.6,1.32
+2006,disaster_rescue,freq_of_volunteering,at least once a year,80.4,4.14
+2006,arts_culture,freq_of_volunteering,at least once a year,89.0,4.59
+2006,environment_nature,freq_of_volunteering,at least once a year,65.9,3.40
+2006,religion_church,freq_of_volunteering,at least once a year,99.0,5.10
+2006,social_health,freq_of_volunteering,at least once a year,69.1,3.56
+2006,politics_advocacy,freq_of_volunteering,at least once a year,62.3,3.21
+2006,civic_community,freq_of_volunteering,at least once a year,87.9,4.53
+2006,education,freq_of_volunteering,at least once a year,29.0,1.49
+2006,sports,freq_of_volunteering,at least once a year,121.9,6.28
+2006,refugee_aid,freq_of_volunteering,at least once a year,24.9,1.28
+2006,disaster_rescue,freq_of_volunteering,none,44.9,2.31
+2006,arts_culture,freq_of_volunteering,none,38.9,2.00
+2006,environment_nature,freq_of_volunteering,none,18.0,0.93
+2006,religion_church,freq_of_volunteering,none,24.7,1.27
+2006,social_health,freq_of_volunteering,none,24.1,1.24
+2006,politics_advocacy,freq_of_volunteering,none,19.8,1.02
+2006,civic_community,freq_of_volunteering,none,32.6,1.68
+2006,education,freq_of_volunteering,none,0.0,0.00
+2006,sports,freq_of_volunteering,none,57.4,2.96
+2006,refugee_aid,freq_of_volunteering,none,0.0,0.00
+2012,disaster_rescue,all,all,234.1,13.85
+2012,arts_culture,all,all,229.8,13.60
+2012,environment_nature,all,all,114.2,6.76
+2012,religion_church,all,all,212.7,12.59
+2012,social_health,all,all,167.2,9.89
+2012,politics_advocacy,all,all,127.4,7.54
+2012,civic_community,all,all,153.9,9.11
+2012,education,all,all,82.5,4.88
+2012,sports,all,all,316.8,18.75
+2012,refugee_aid,all,all,51.1,3.02
+2012,disaster_rescue,gender,male,384.9,22.78
+2012,arts_culture,gender,male,265.7,15.72
+2012,environment_nature,gender,male,135.2,8.00
+2012,religion_church,gender,male,177.7,10.52
+2012,social_health,gender,male,148.0,8.76
+2012,politics_advocacy,gender,male,178.2,10.55
+2012,civic_community,gender,male,190.5,11.27
+2012,education,gender,male,77.2,4.57
+2012,sports,gender,male,454.8,26.91
+2012,refugee_aid,gender,male,47.6,2.82
+2012,disaster_rescue,gender,female,90.8,5.37
+2012,arts_culture,gender,female,189.9,11.24
+2012,environment_nature,gender,female,91.4,5.41
+2012,religion_church,gender,female,236.9,14.02
+2012,social_health,gender,female,178.8,10.58
+2012,politics_advocacy,gender,female,77.7,4.60
+2012,civic_community,gender,female,115.9,6.86
+2012,education,gender,female,84.5,5.00
+2012,sports,gender,female,182.4,10.79
+2012,refugee_aid,gender,female,52.6,3.11
+2012,disaster_rescue,age_group,<40,223.5,13.23
+2012,arts_culture,age_group,<40,180.1,10.66
+2012,environment_nature,age_group,<40,81.3,4.81
+2012,religion_church,age_group,<40,124.6,7.37
+2012,social_health,age_group,<40,104.9,6.21
+2012,politics_advocacy,age_group,<40,83.0,4.91
+2012,civic_community,age_group,<40,95.8,5.67
+2012,education,age_group,<40,63.5,3.76
+2012,sports,age_group,<40,255.7,15.13
+2012,refugee_aid,age_group,<40,34.9,2.07
+2012,disaster_rescue,age_group,40-59,143.5,8.49
+2012,arts_culture,age_group,40-59,155.8,9.22
+2012,environment_nature,age_group,40-59,76.4,4.52
+2012,religion_church,age_group,40-59,152.7,9.04
+2012,social_health,age_group,40-59,114.2,6.76
+2012,politics_advocacy,age_group,40-59,101.5,6.01
+2012,civic_community,age_group,40-59,122.5,7.25
+2012,education,age_group,40-59,53.6,3.17
+2012,sports,age_group,40-59,239.9,14.20
+2012,refugee_aid,age_group,40-59,34.4,2.04
+2012,disaster_rescue,age_group,>=60,93.5,5.53
+2012,arts_culture,age_group,>=60,113.0,6.69
+2012,environment_nature,age_group,>=60,64.9,3.84
+2012,religion_church,age_group,>=60,135.4,8.01
+2012,social_health,age_group,>=60,106.1,6.28
+2012,politics_advocacy,age_group,>=60,62.3,3.69
+2012,civic_community,age_group,>=60,79.4,4.70
+2012,education,age_group,>=60,44.2,2.62
+2012,sports,age_group,>=60,121.2,7.17
+2012,refugee_aid,age_group,>=60,30.4,1.80
+2012,disaster_rescue,education,No Matura,267.8,15.85
+2012,arts_culture,education,No Matura,190.2,11.26
+2012,environment_nature,education,No Matura,106.4,6.30
+2012,religion_church,education,No Matura,189.6,11.22
+2012,social_health,education,No Matura,150.5,8.91
+2012,politics_advocacy,education,No Matura,118.4,7.01
+2012,civic_community,education,No Matura,153.5,9.08
+2012,education,education,No Matura,40.2,2.38
+2012,sports,education,No Matura,286.5,16.95
+2012,refugee_aid,education,No Matura,33.9,2.01
+2012,disaster_rescue,education,(at least) Matura,140.6,8.32
+2012,arts_culture,education,(at least) Matura,222.8,13.18
+2012,environment_nature,education,(at least) Matura,96.8,5.73
+2012,religion_church,education,(at least) Matura,190.5,11.27
+2012,social_health,education,(at least) Matura,148.0,8.76
+2012,politics_advocacy,education,(at least) Matura,108.5,6.42
+2012,civic_community,education,(at least) Matura,118.8,7.03
+2012,education,education,(at least) Matura,112.7,6.67
+2012,sports,education,(at least) Matura,278.9,16.50
+2012,refugee_aid,education,(at least) Matura,59.4,3.52
+2012,disaster_rescue,freq_of_volunteering,at least once a month,183.5,10.86
+2012,arts_culture,freq_of_volunteering,at least once a month,160.9,9.52
+2012,environment_nature,freq_of_volunteering,at least once a month,61.4,3.63
+2012,religion_church,freq_of_volunteering,at least once a month,148.5,8.79
+2012,social_health,freq_of_volunteering,at least once a month,122.5,7.25
+2012,politics_advocacy,freq_of_volunteering,at least once a month,87.7,5.19
+2012,civic_community,freq_of_volunteering,at least once a month,93.1,5.51
+2012,education,freq_of_volunteering,at least once a month,53.8,3.18
+2012,sports,freq_of_volunteering,at least once a month,170.8,10.11
+2012,refugee_aid,freq_of_volunteering,at least once a month,24.7,1.46
+2012,disaster_rescue,freq_of_volunteering,at least once a week,104.5,6.18
+2012,arts_culture,freq_of_volunteering,at least once a week,114.5,6.78
+2012,environment_nature,freq_of_volunteering,at least once a week,49.0,2.90
+2012,religion_church,freq_of_volunteering,at least once a week,100.2,5.93
+2012,social_health,freq_of_volunteering,at least once a week,76.1,4.50
+2012,politics_advocacy,freq_of_volunteering,at least once a week,52.7,3.12
+2012,civic_community,freq_of_volunteering,at least once a week,53.6,3.17
+2012,education,freq_of_volunteering,at least once a week,41.0,2.43
+2012,sports,freq_of_volunteering,at least once a week,212.5,12.58
+2012,refugee_aid,freq_of_volunteering,at least once a week,24.3,1.44
+2012,disaster_rescue,freq_of_volunteering,at least once a year,105.2,6.23
+2012,arts_culture,freq_of_volunteering,at least once a year,116.5,6.89
+2012,environment_nature,freq_of_volunteering,at least once a year,86.2,5.10
+2012,religion_church,freq_of_volunteering,at least once a year,129.6,7.67
+2012,social_health,freq_of_volunteering,at least once a year,90.5,5.36
+2012,politics_advocacy,freq_of_volunteering,at least once a year,81.6,4.83
+2012,civic_community,freq_of_volunteering,at least once a year,115.1,6.81
+2012,education,freq_of_volunteering,at least once a year,37.9,2.24
+2012,sports,freq_of_volunteering,at least once a year,159.5,9.44
+2012,refugee_aid,freq_of_volunteering,at least once a year,32.6,1.93
+2012,disaster_rescue,freq_of_volunteering,none,39.0,2.31
+2012,arts_culture,freq_of_volunteering,none,33.8,2.00
+2012,environment_nature,freq_of_volunteering,none,23.6,1.40
+2012,religion_church,freq_of_volunteering,none,21.4,1.27
+2012,social_health,freq_of_volunteering,none,21.0,1.24
+2012,politics_advocacy,freq_of_volunteering,none,17.2,1.02
+2012,civic_community,freq_of_volunteering,none,28.3,1.67
+2012,education,freq_of_volunteering,none,0.0,0.00
+2012,sports,freq_of_volunteering,none,49.8,2.95
+2012,refugee_aid,freq_of_volunteering,none,0.0,0.00
+2016,disaster_rescue,all,all,237.6,13.85
+2016,arts_culture,all,all,233.3,13.60
+2016,environment_nature,all,all,115.9,6.76
+2016,religion_church,all,all,215.9,12.59
+2016,social_health,all,all,169.8,9.90
+2016,politics_advocacy,all,all,129.4,7.54
+2016,civic_community,all,all,156.3,9.11
+2016,education,all,all,83.8,4.89
+2016,sports,all,all,321.6,18.75
+2016,refugee_aid,all,all,51.9,3.03
+2016,disaster_rescue,gender,male,372.2,21.70
+2016,arts_culture,gender,male,256.9,14.98
+2016,environment_nature,gender,male,130.8,7.63
+2016,religion_church,gender,male,171.8,10.02
+2016,social_health,gender,male,143.1,8.34
+2016,politics_advocacy,gender,male,172.3,10.04
+2016,civic_community,gender,male,184.2,10.74
+2016,education,gender,male,74.7,4.35
+2016,sports,gender,male,439.7,25.63
+2016,refugee_aid,gender,male,46.0,2.68
+2016,disaster_rescue,gender,female,99.1,5.78
+2016,arts_culture,gender,female,207.3,12.08
+2016,environment_nature,gender,female,99.7,5.81
+2016,religion_church,gender,female,258.5,15.07
+2016,social_health,gender,female,195.2,11.38
+2016,politics_advocacy,gender,female,84.8,4.94
+2016,civic_community,gender,female,126.5,7.37
+2016,education,gender,female,92.2,5.37
+2016,sports,gender,female,199.0,11.60
+2016,refugee_aid,gender,female,57.4,3.35
+2016,disaster_rescue,age_group,<40,214.5,12.50
+2016,arts_culture,age_group,<40,172.8,10.07
+2016,environment_nature,age_group,<40,78.0,4.55
+2016,religion_church,age_group,<40,119.5,6.97
+2016,social_health,age_group,<40,100.6,5.86
+2016,politics_advocacy,age_group,<40,79.6,4.64
+2016,civic_community,age_group,<40,91.9,5.36
+2016,education,age_group,<40,60.9,3.55
+2016,sports,age_group,<40,245.3,14.30
+2016,refugee_aid,age_group,<40,33.5,1.95
+2016,disaster_rescue,age_group,40-59,133.4,7.78
+2016,arts_culture,age_group,40-59,144.9,8.45
+2016,environment_nature,age_group,40-59,71.0,4.14
+2016,religion_church,age_group,40-59,141.9,8.27
+2016,social_health,age_group,40-59,106.1,6.19
+2016,politics_advocacy,age_group,40-59,94.4,5.50
+2016,civic_community,age_group,40-59,113.9,6.64
+2016,education,age_group,40-59,49.8,2.90
+2016,sports,age_group,40-59,223.0,13.00
+2016,refugee_aid,age_group,40-59,32.0,1.87
+2016,disaster_rescue,age_group,>=60,87.6,5.11
+2016,arts_culture,age_group,>=60,105.8,6.17
+2016,environment_nature,age_group,>=60,60.8,3.54
+2016,religion_church,age_group,>=60,126.7,7.39
+2016,social_health,age_group,>=60,99.3,5.79
+2016,politics_advocacy,age_group,>=60,58.4,3.40
+2016,civic_community,age_group,>=60,74.3,4.33
+2016,education,age_group,>=60,41.4,2.41
+2016,sports,age_group,>=60,113.5,6.62
+2016,refugee_aid,age_group,>=60,28.4,1.66
+2016,disaster_rescue,education,No Matura,272.4,15.88
+2016,arts_culture,education,No Matura,193.5,11.28
+2016,environment_nature,education,No Matura,108.2,6.31
+2016,religion_church,education,No Matura,192.8,11.24
+2016,social_health,education,No Matura,153.0,8.92
+2016,politics_advocacy,education,No Matura,120.5,7.02
+2016,civic_community,education,No Matura,156.2,9.11
+2016,education,education,No Matura,40.9,2.38
+2016,sports,education,No Matura,291.4,16.99
+2016,refugee_aid,education,No Matura,34.5,2.01
+2016,disaster_rescue,education,(at least) Matura,151.6,8.84
+2016,arts_culture,education,(at least) Matura,240.2,14.00
+2016,environment_nature,education,(at least) Matura,104.3,6.08
+2016,religion_church,education,(at least) Matura,205.3,11.97
+2016,social_health,education,(at least) Matura,159.5,9.30
+2016,politics_advocacy,education,(at least) Matura,117.0,6.82
+2016,civic_community,education,(at least) Matura,128.1,7.47
+2016,education,education,(at least) Matura,121.5,7.08
+2016,sports,education,(at least) Matura,300.6,17.52
+2016,refugee_aid,education,(at least) Matura,64.0,3.73
+2016,disaster_rescue,freq_of_volunteering,at least once a month,193.3,11.27
+2016,arts_culture,freq_of_volunteering,at least once a month,169.5,9.88
+2016,environment_nature,freq_of_volunteering,at least once a month,64.7,3.77
+2016,religion_church,freq_of_volunteering,at least once a month,156.5,9.12
+2016,social_health,freq_of_volunteering,at least once a month,129.1,7.53
+2016,politics_advocacy,freq_of_volunteering,at least once a month,92.4,5.39
+2016,civic_community,freq_of_volunteering,at least once a month,98.1,5.72
+2016,education,freq_of_volunteering,at least once a month,56.7,3.31
+2016,sports,freq_of_volunteering,at least once a month,180.0,10.49
+2016,refugee_aid,freq_of_volunteering,at least once a month,26.0,1.52
+2016,disaster_rescue,freq_of_volunteering,at least once a week,113.3,6.60
+2016,arts_culture,freq_of_volunteering,at least once a week,124.1,7.23
+2016,environment_nature,freq_of_volunteering,at least once a week,53.1,3.10
+2016,religion_church,freq_of_volunteering,at least once a week,108.6,6.33
+2016,social_health,freq_of_volunteering,at least once a week,82.5,4.81
+2016,politics_advocacy,freq_of_volunteering,at least once a week,57.2,3.33
+2016,civic_community,freq_of_volunteering,at least once a week,58.1,3.39
+2016,education,freq_of_volunteering,at least once a week,44.4,2.59
+2016,sports,freq_of_volunteering,at least once a week,230.4,13.43
+2016,refugee_aid,freq_of_volunteering,at least once a week,26.4,1.54
+2016,disaster_rescue,freq_of_volunteering,at least once a year,81.8,4.77
+2016,arts_culture,freq_of_volunteering,at least once a year,90.6,5.28
+2016,environment_nature,freq_of_volunteering,at least once a year,67.0,3.91
+2016,religion_church,freq_of_volunteering,at least once a year,100.7,5.87
+2016,social_health,freq_of_volunteering,at least once a year,70.3,4.10
+2016,politics_advocacy,freq_of_volunteering,at least once a year,63.4,3.70
+2016,civic_community,freq_of_volunteering,at least once a year,89.4,5.21
+2016,education,freq_of_volunteering,at least once a year,29.5,1.72
+2016,sports,freq_of_volunteering,at least once a year,124.0,7.23
+2016,refugee_aid,freq_of_volunteering,at least once a year,25.3,1.47
+2016,disaster_rescue,freq_of_volunteering,none,39.4,2.30
+2016,arts_culture,freq_of_volunteering,none,34.2,1.99
+2016,environment_nature,freq_of_volunteering,none,18.3,1.07
+2016,religion_church,freq_of_volunteering,none,21.7,1.27
+2016,social_health,freq_of_volunteering,none,21.2,1.24
+2016,politics_advocacy,freq_of_volunteering,none,17.4,1.01
+2016,civic_community,freq_of_volunteering,none,28.6,1.67
+2016,education,freq_of_volunteering,none,0.0,0.00
+2016,sports,freq_of_volunteering,none,50.4,2.94
+2016,refugee_aid,freq_of_volunteering,none,0.0,0.00
+2022,disaster_rescue,all,all,428.3,21.99
+2022,arts_culture,all,all,420.6,21.59
+2022,environment_nature,all,all,208.9,10.72
+2022,religion_church,all,all,389.2,19.98
+2022,social_health,all,all,306.0,15.71
+2022,politics_advocacy,all,all,233.2,11.97
+2022,civic_community,all,all,281.7,14.46
+2022,education,all,all,151.0,7.75
+2022,sports,all,all,579.7,29.76
+2022,refugee_aid,all,all,93.6,4.81
+2022,disaster_rescue,gender,male,339.0,17.40
+2022,arts_culture,gender,male,234.0,12.01
+2022,environment_nature,gender,male,119.1,6.11
+2022,religion_church,gender,male,156.5,8.03
+2022,social_health,gender,male,130.3,6.69
+2022,politics_advocacy,gender,male,156.9,8.05
+2022,civic_community,gender,male,167.8,8.61
+2022,education,gender,male,68.0,3.49
+2022,sports,gender,male,400.5,20.56
+2022,refugee_aid,gender,male,41.9,2.15
+2022,disaster_rescue,gender,female,89.2,4.58
+2022,arts_culture,gender,female,186.6,9.58
+2022,environment_nature,gender,female,89.8,4.61
+2022,religion_church,gender,female,232.7,11.95
+2022,social_health,gender,female,175.7,9.02
+2022,politics_advocacy,gender,female,76.3,3.92
+2022,civic_community,gender,female,113.9,5.85
+2022,education,gender,female,83.0,4.26
+2022,sports,gender,female,179.2,9.20
+2022,refugee_aid,gender,female,51.7,2.65
+2022,disaster_rescue,age_group,<40,196.7,10.10
+2022,arts_culture,age_group,<40,158.5,8.14
+2022,environment_nature,age_group,<40,71.5,3.67
+2022,religion_church,age_group,<40,109.6,5.63
+2022,social_health,age_group,<40,92.3,4.74
+2022,politics_advocacy,age_group,<40,73.0,3.75
+2022,civic_community,age_group,<40,84.3,4.33
+2022,education,age_group,<40,55.9,2.87
+2022,sports,age_group,<40,225.0,11.55
+2022,refugee_aid,age_group,<40,30.7,1.58
+2022,disaster_rescue,age_group,40-59,145.0,7.44
+2022,arts_culture,age_group,40-59,157.5,8.09
+2022,environment_nature,age_group,40-59,77.2,3.96
+2022,religion_church,age_group,40-59,154.3,7.92
+2022,social_health,age_group,40-59,115.4,5.92
+2022,politics_advocacy,age_group,40-59,102.6,5.27
+2022,civic_community,age_group,40-59,123.8,6.36
+2022,education,age_group,40-59,54.2,2.78
+2022,sports,age_group,40-59,242.5,12.45
+2022,refugee_aid,age_group,40-59,34.8,1.79
+2022,disaster_rescue,age_group,>=60,86.6,4.45
+2022,arts_culture,age_group,>=60,104.6,5.37
+2022,environment_nature,age_group,>=60,60.1,3.09
+2022,religion_church,age_group,>=60,125.3,6.43
+2022,social_health,age_group,>=60,98.2,5.04
+2022,politics_advocacy,age_group,>=60,57.7,2.96
+2022,civic_community,age_group,>=60,73.5,3.77
+2022,education,age_group,>=60,40.9,2.10
+2022,sports,age_group,>=60,112.2,5.76
+2022,refugee_aid,age_group,>=60,28.1,1.44
+2022,disaster_rescue,education,No Matura,295.1,15.15
+2022,arts_culture,education,No Matura,209.6,10.76
+2022,environment_nature,education,No Matura,117.2,6.02
+2022,religion_church,education,No Matura,208.9,10.72
+2022,social_health,education,No Matura,165.8,8.51
+2022,politics_advocacy,education,No Matura,130.5,6.70
+2022,civic_community,education,No Matura,169.2,8.69
+2022,education,education,No Matura,44.3,2.27
+2022,sports,education,No Matura,315.7,16.21
+2022,refugee_aid,education,No Matura,37.4,1.92
+2022,disaster_rescue,education,(at least) Matura,133.1,6.83
+2022,arts_culture,education,(at least) Matura,210.9,10.83
+2022,environment_nature,education,(at least) Matura,91.6,4.70
+2022,religion_church,education,(at least) Matura,180.3,9.26
+2022,social_health,education,(at least) Matura,140.1,7.19
+2022,politics_advocacy,education,(at least) Matura,102.7,5.27
+2022,civic_community,education,(at least) Matura,112.5,5.78
+2022,education,education,(at least) Matura,106.7,5.48
+2022,sports,education,(at least) Matura,264.0,13.55
+2022,refugee_aid,education,(at least) Matura,56.2,2.89
+2022,disaster_rescue,freq_of_volunteering,at least once a month,192.5,9.88
+2022,arts_culture,freq_of_volunteering,at least once a month,168.8,8.67
+2022,environment_nature,freq_of_volunteering,at least once a month,64.4,3.31
+2022,religion_church,freq_of_volunteering,at least once a month,155.8,8.00
+2022,social_health,freq_of_volunteering,at least once a month,128.5,6.60
+2022,politics_advocacy,freq_of_volunteering,at least once a month,92.0,4.72
+2022,civic_community,freq_of_volunteering,at least once a month,97.7,5.02
+2022,education,freq_of_volunteering,at least once a month,56.5,2.90
+2022,sports,freq_of_volunteering,at least once a month,179.2,9.20
+2022,refugee_aid,freq_of_volunteering,at least once a month,25.9,1.33
+2022,disaster_rescue,freq_of_volunteering,at least once a week,100.5,5.16
+2022,arts_culture,freq_of_volunteering,at least once a week,110.1,5.65
+2022,environment_nature,freq_of_volunteering,at least once a week,47.1,2.42
+2022,religion_church,freq_of_volunteering,at least once a week,96.3,4.94
+2022,social_health,freq_of_volunteering,at least once a week,73.2,3.76
+2022,politics_advocacy,freq_of_volunteering,at least once a week,50.7,2.60
+2022,civic_community,freq_of_volunteering,at least once a week,51.5,2.64
+2022,education,freq_of_volunteering,at least once a week,39.4,2.02
+2022,sports,freq_of_volunteering,at least once a week,204.3,10.49
+2022,refugee_aid,freq_of_volunteering,at least once a week,23.4,1.20
+2022,disaster_rescue,freq_of_volunteering,at least once a year,93.3,4.79
+2022,arts_culture,freq_of_volunteering,at least once a year,103.3,5.30
+2022,environment_nature,freq_of_volunteering,at least once a year,76.4,3.92
+2022,religion_church,freq_of_volunteering,at least once a year,114.9,5.90
+2022,social_health,freq_of_volunteering,at least once a year,80.2,4.12
+2022,politics_advocacy,freq_of_volunteering,at least once a year,72.3,3.71
+2022,civic_community,freq_of_volunteering,at least once a year,102.0,5.24
+2022,education,freq_of_volunteering,at least once a year,33.6,1.72
+2022,sports,freq_of_volunteering,at least once a year,141.4,7.26
+2022,refugee_aid,freq_of_volunteering,at least once a year,28.9,1.48
+2022,disaster_rescue,freq_of_volunteering,none,40.4,2.07
+2022,arts_culture,freq_of_volunteering,none,35.0,1.80
+2022,environment_nature,freq_of_volunteering,none,20.9,1.07
+2022,religion_church,freq_of_volunteering,none,22.2,1.14
+2022,social_health,freq_of_volunteering,none,21.7,1.11
+2022,politics_advocacy,freq_of_volunteering,none,17.8,0.91
+2022,civic_community,freq_of_volunteering,none,29.3,1.50
+2022,education,freq_of_volunteering,none,0.0,0.00
+2022,sports,freq_of_volunteering,none,51.6,2.65
+2022,refugee_aid,freq_of_volunteering,none,0.0,0.00
+2025,disaster_rescue,all,all,434.5,23.34
+2025,arts_culture,all,all,399.6,21.47
+2025,environment_nature,all,all,176.1,9.46
+2025,religion_church,all,all,329.9,17.72
+2025,social_health,all,all,269.3,14.47
+2025,politics_advocacy,all,all,187.3,10.06
+2025,civic_community,all,all,220.0,11.82
+2025,education,all,all,189.9,10.20
+2025,sports,all,all,516.5,27.75
+2025,other_area,all,all,93.6,5.03
+2025,disaster_rescue,gender,male,330.1,17.73
+2025,arts_culture,gender,male,195.1,10.48
+2025,environment_nature,gender,male,96.8,5.20
+2025,religion_church,gender,male,140.3,7.54
+2025,social_health,gender,male,97.0,5.21
+2025,politics_advocacy,gender,male,130.9,7.03
+2025,civic_community,gender,male,122.1,6.56
+2025,education,gender,male,68.3,3.67
+2025,sports,gender,male,346.4,18.61
+2025,other_area,gender,male,54.0,2.90
+2025,disaster_rescue,gender,female,104.3,5.60
+2025,arts_culture,gender,female,204.5,10.99
+2025,environment_nature,gender,female,79.3,4.26
+2025,religion_church,gender,female,189.7,10.19
+2025,social_health,gender,female,172.3,9.26
+2025,politics_advocacy,gender,female,56.4,3.03
+2025,civic_community,gender,female,98.0,5.26
+2025,education,gender,female,121.6,6.53
+2025,sports,gender,female,170.1,9.14
+2025,other_area,gender,female,39.6,2.13
+2025,disaster_rescue,age_group,<40,202.1,10.86
+2025,arts_culture,age_group,<40,163.9,8.81
+2025,environment_nature,age_group,<40,59.2,3.18
+2025,religion_church,age_group,<40,84.8,4.56
+2025,social_health,age_group,<40,77.9,4.19
+2025,politics_advocacy,age_group,<40,60.6,3.26
+2025,civic_community,age_group,<40,58.2,3.13
+2025,education,age_group,<40,72.5,3.89
+2025,sports,age_group,<40,214.9,11.55
+2025,other_area,age_group,<40,22.1,1.19
+2025,disaster_rescue,age_group,40-59,145.3,7.81
+2025,arts_culture,age_group,40-59,134.8,7.24
+2025,environment_nature,age_group,40-59,71.9,3.86
+2025,religion_church,age_group,40-59,126.4,6.79
+2025,social_health,age_group,40-59,81.5,4.38
+2025,politics_advocacy,age_group,40-59,82.3,4.42
+2025,civic_community,age_group,40-59,88.7,4.77
+2025,education,age_group,40-59,81.6,4.38
+2025,sports,age_group,40-59,192.8,10.36
+2025,other_area,age_group,40-59,38.3,2.06
+2025,disaster_rescue,age_group,>=60,87.0,4.67
+2025,arts_culture,age_group,>=60,100.9,5.42
+2025,environment_nature,age_group,>=60,45.0,2.42
+2025,religion_church,age_group,>=60,118.7,6.38
+2025,social_health,age_group,>=60,109.9,5.90
+2025,politics_advocacy,age_group,>=60,44.4,2.39
+2025,civic_community,age_group,>=60,73.1,3.93
+2025,education,age_group,>=60,35.8,1.92
+2025,sports,age_group,>=60,108.8,5.85
+2025,other_area,age_group,>=60,33.2,1.78
+2025,disaster_rescue,education,No Matura,283.5,15.23
+2025,arts_culture,education,No Matura,168.1,9.03
+2025,environment_nature,education,No Matura,100.7,5.41
+2025,religion_church,education,No Matura,157.2,8.45
+2025,social_health,education,No Matura,144.0,7.74
+2025,politics_advocacy,education,No Matura,99.7,5.36
+2025,civic_community,education,No Matura,121.2,6.51
+2025,education,education,No Matura,51.3,2.76
+2025,sports,education,No Matura,259.1,13.92
+2025,other_area,education,No Matura,56.8,3.05
+2025,disaster_rescue,education,(at least) Matura,151.0,8.11
+2025,arts_culture,education,(at least) Matura,231.5,12.44
+2025,environment_nature,education,(at least) Matura,75.4,4.05
+2025,religion_church,education,(at least) Matura,172.7,9.28
+2025,social_health,education,(at least) Matura,125.3,6.73
+2025,politics_advocacy,education,(at least) Matura,87.5,4.70
+2025,civic_community,education,(at least) Matura,98.8,5.31
+2025,education,education,(at least) Matura,138.6,7.45
+2025,sports,education,(at least) Matura,257.4,13.83
+2025,other_area,education,(at least) Matura,36.8,1.98

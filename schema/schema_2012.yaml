@@ -1,36 +1,10 @@
 # Year-specific schema: 2022
 # Maps logical chart names to their data files and declares available filters.
 
-year: 2022
-data_status: official
-source_file: "../statistic data/2022 sheets/Freiwilligentaetigkeit_2022_Tabellenband.ods"
+year: 2012
+data_status: Synthetic
+source_file: null
 
-# Maps each logical table name to its sheet in the source ODS
-source_tables:
-  volunteering_general:    Tabelle1_1
-  formal_volunteering:     Tabelle2_1
-  informal_volunteering:   Tabelle2_2
-  formal_informal_split:   Tabelle2_3
-  formal_areas_overall:    Tabelle4_1
-  formal_areas_by_gender:  Tabelle4_3
-  formal_areas_by_age:     Tabelle4_4
-  formal_areas_by_edu:     Tabelle4_5
-  num_orgs:                Tabelle5_1
-  task_types:              Tabelle6_1
-  informal_areas_overall:  Tabelle8_1
-  informal_areas_by_gender: Tabelle8_2
-  informal_areas_by_age:   Tabelle8_3
-  informal_areas_by_edu:   Tabelle8_4
-  motivations:             Tabelle11_1
-  barriers:                Tabelle11_2
-  time_overall:            Tabelle12_1
-  time_by_gender:          Tabelle12_2
-  time_by_edu:             Tabelle12_4
-  time_by_migration:       Tabelle12_7
-  time_by_employment:      Tabelle12_8
-  time_by_municipality:    Tabelle12_9
-  time_by_region:          Tabelle12_10
-  time_categories_gender:  Tabelle13_1
 
 # Maps each logical dataset to its tidy CSV file
 data_files:

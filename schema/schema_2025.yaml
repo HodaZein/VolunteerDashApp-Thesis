@@ -62,8 +62,13 @@ available_filters:
   gender_comparison:
     vol_types: [Formal, Informal]
     dimensions:
-      Formal:   [Formal_NumberOfOrgs, Formal_TaskTypes, Formal_Areas, Formal_Time/week]
-      Informal: [Informal_Areas, Informal_Time/week]
+      Formal:   [Formal_NumberOfOrgs, Formal_TaskTypes, Formal_Areas]
+      Informal: [Informal_Areas]
+    unavailable_dimensions:
+      - id: Formal_Time/week
+        reason: "Hours-range x gender table (Tabelle 13.1) not published in 2025 survey release."
+      - id: Informal_Time/week
+        reason: "Hours-range x gender table (Tabelle 13.1) not published in 2025 survey release."
 
   motivations_barriers:
     types: [motivation, barrier]
