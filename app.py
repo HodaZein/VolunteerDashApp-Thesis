@@ -3,7 +3,7 @@ import json
 import sys
 
 import dash
-from dash import dcc, html, ctx
+from dash import dcc, html, ctx, dash_table
 from dash.dependencies import Output, Input, State
 import pandas as pd
 import plotly.express as px
@@ -397,32 +397,45 @@ app.layout = dbc.Container([
                 className="mb-4 mt-2 text-center fw-semibold"),
         dbc.Row([
             dbc.Col([
-                html.Label("Type of Volunteering", className="mb-1"),
-                dcc.Dropdown(id="gender-type-dropdown", options=[
+                html.Label("Type of Volunteering", className="mb-1",
+                           htmlFor="gender-type-select"),
+                dbc.Select(id="gender-type-select", options=[
                     {"label": "Formal", "value": "Formal"},
                     {"label": "Informal", "value": "Informal"},
-                ], value="Formal", clearable=False),
+                ], value="Formal"),
             ], width=2),
             dbc.Col([
-                html.Label("Dimension", className="mb-1"),
-                dcc.Dropdown(id="gender-dimension-dropdown", options=[], value=None,
-                             clearable=False),
+                html.Label("Dimension", className="mb-1",
+                           htmlFor="gender-dimension-select"),
+                dbc.Select(id="gender-dimension-select", options=[], value=""),
             ], width=2),
             dbc.Col([
-                html.Label("Statistic", className="mb-1"),
-                dcc.RadioItems(id="gender-display-mode", options=[
-                    {"label": "Percentage", "value": "percent"},
-                    {"label": "Count", "value": "count"},
-                ], value="percent", labelStyle={"marginRight": "15px"}),
+                html.Fieldset([
+                    html.Legend("Statistic", className="mb-1"),
+                    dcc.RadioItems(id="gender-display-mode", options=[
+                        {"label": "Percentage", "value": "percent"},
+                        {"label": "Count", "value": "count"},
+                    ], value="percent", labelStyle={"marginRight": "15px"}),
+                ], style={"border": "none", "padding": 0, "margin": 0}),
             ], width=2),
             dbc.Col([
-                html.Label("Year", className="mb-1"),
-                dcc.Dropdown(id="gender-year-dropdown",
-                             options=[{"label": str(y), "value": y} for y in years],
-                             value=max(years), clearable=False),
+                html.Label("Year", className="mb-1", htmlFor="gender-year-select"),
+                dbc.Select(id="gender-year-select",
+                           options=[{"label": str(y), "value": str(y)} for y in years],
+                           value=str(max(years))),
             ], width=2),
         ], align="center", justify="center", className="mb-4"),
         dcc.Graph(id="gender-comparison-bar"),
+        html.Div(id="gender-live-summary",
+                 className="visually-hidden",
+                 **{"aria-live": "polite", "aria-atomic": "true"}),
+        html.Div(
+            id="gender-comparison-table",
+            tabIndex=0,
+            role="region",
+            **{"aria-label": "Gender comparison data table"},
+            style={"marginTop": "16px", "overflowX": "auto"},
+        ),
         dbc.Alert([
             html.H6("Graph description", className="alert-heading"),
             html.P([
@@ -472,9 +485,32 @@ app.layout = dbc.Container([
        style={"backgroundColor": "#f8f9fa"}),
 
     dcc.Store(id="selected-region", data=regions[0]),
+    dcc.Interval(id="a11y-radio-init", interval=200, max_intervals=1),
     html.Div(id="other-sections-placeholder"),
 ], fluid=True)
 
+# ── one-time: stamp unique name= on every RadioItems group so NVDA counts correctly
+app.clientside_callback(
+    """
+    function(n) {
+        var groups = [
+            'stat-type-radio', 'ts-radio', 'ts2-radio',
+            'mb-type-radio', 'activity-display-mode', 'gender-display-mode'
+        ];
+        groups.forEach(function(gid) {
+            var el = document.getElementById(gid);
+            if (!el) return;
+            el.querySelectorAll('input[type="radio"]').forEach(function(inp) {
+                inp.setAttribute('name', gid);
+            });
+        });
+
+        return null;
+    }
+    """,
+    Output("other-sections-placeholder", "children"),
+    Input("a11y-radio-init", "n_intervals"),
+)
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 def resolve_column(metric_value, stat_type_value):
@@ -771,57 +807,61 @@ def update_activity_stacked_bar(vol_type, csv_demo, display_mode, selected_year)
 
 
 @app.callback(
-    Output("gender-dimension-dropdown", "options"),
-    Output("gender-dimension-dropdown", "value"),
-    Input("gender-type-dropdown", "value"),
-    Input("gender-year-dropdown", "value"),
-    State("gender-dimension-dropdown", "value"),
+    Output("gender-dimension-select", "options"),
+    Output("gender-dimension-select", "value"),
+    Input("gender-type-select", "value"),
+    Input("gender-year-select", "value"),
+    State("gender-dimension-select", "value"),
 )
 def update_dimension_options(vol_type, selected_year, current_dim):
-    filters       = get_available_filters("gender_comparison", int(selected_year))
-    avail_dims    = filters.get("dimensions", {}).get(vol_type, [])
-    unavail_items = filters.get("unavailable_dimensions", [])
-    unavail_ids   = {d["id"] for d in unavail_items}
+    filters    = get_available_filters("gender_comparison", int(selected_year))
+    avail_dims = filters.get("dimensions", {}).get(vol_type, [])
 
     all_possible = {
         "Formal":   ["Formal_NumberOfOrgs", "Formal_TaskTypes", "Formal_Areas", "Formal_Time/week"],
         "Informal": ["Informal_Areas", "Informal_Time/week"],
     }.get(vol_type, [])
 
-    options = []
-    for dim_id in all_possible:
-        label = DIM_LABELS.get(dim_id, dim_id)
-        if dim_id in unavail_ids:
-            options.append({"label": f"{label} (not available in {selected_year})",
-                            "value": dim_id, "disabled": True})
-        elif dim_id in avail_dims:
-            options.append({"label": label, "value": dim_id})
+    options = [
+        {"label": DIM_LABELS.get(dim_id, dim_id), "value": dim_id}
+        for dim_id in all_possible
+        if dim_id in avail_dims
+    ]
 
-    default = avail_dims[0] if avail_dims else (all_possible[0] if all_possible else None)
-    value = current_dim if (current_dim in avail_dims) else default
+    default = avail_dims[0] if avail_dims else ""
+    value   = current_dim if current_dim in avail_dims else default
     return options, value
 
 
 @app.callback(
     Output("gender-comparison-bar", "figure"),
-    Input("gender-type-dropdown", "value"),
-    Input("gender-dimension-dropdown", "value"),
+    Output("gender-comparison-table", "children"),
+    Output("gender-live-summary", "children"),
+    Input("gender-type-select", "value"),
+    Input("gender-dimension-select", "value"),
     Input("gender-display-mode", "value"),
-    Input("gender-year-dropdown", "value"),
+    Input("gender-year-select", "value"),
 )
 def update_gender_comparison(vol_type, dimension, display_mode, selected_year):
-    if dimension is None:
-        return px.bar(title="Please select a dimension.")
+    _no_table = None
 
-    filters    = get_available_filters("gender_comparison", int(selected_year))
-    unavail_ids = {d["id"] for d in filters.get("unavailable_dimensions", [])}
+    if not dimension:
+        return px.bar(title="Please select a dimension."), _no_table, "Please select a dimension."
+
+    filters     = get_available_filters("gender_comparison", int(selected_year))
+    unavail_ids = {item["id"] for item in filters.get("unavailable_dimensions", [])}
     if dimension in unavail_ids:
-        return go.Figure().update_layout(
-            title=f"{dimension} is not available for {selected_year}",
-            annotations=[dict(text="This dimension was not published in the "
-                              f"{selected_year} survey release.",
-                              xref="paper", yref="paper", x=0.5, y=0.5,
-                              showarrow=False, font=dict(size=14))],
+        msg = f"{dimension} is not available for {selected_year}."
+        return (
+            go.Figure().update_layout(
+                title=f"{dimension} is not available for {selected_year}",
+                annotations=[dict(text="This dimension was not published in the "
+                                  f"{selected_year} survey release.",
+                                  xref="paper", yref="paper", x=0.5, y=0.5,
+                                  showarrow=False, font=dict(size=14))],
+            ),
+            _no_table,
+            msg,
         )
 
     d = gender_comp_df[
@@ -831,10 +871,62 @@ def update_gender_comparison(vol_type, dimension, display_mode, selected_year):
     ].copy()
 
     if d.empty:
-        return px.bar(title="No data for selected filters.")
+        return px.bar(title="No data for selected filters."), _no_table, "No data for selected filters."
 
     d["cat_label"] = d["category"].map(cat_label)
 
+    col_m  = "men_count"  if display_mode == "count" else "men_perc"
+    col_w  = "women_count" if display_mode == "count" else "women_perc"
+    unit   = "k"           if display_mode == "count" else "%"
+    hdr_m  = f"Men ({unit})"
+    hdr_w  = f"Women ({unit})"
+
+    dim_display = DIM_LABELS.get(dimension, dimension)
+
+    # ── aria-live summary ──────────────────────────────────────────────────────
+    d_s         = d.copy()
+    d_s["diff"] = d_s[col_m] - d_s[col_w]
+    men_lead    = d_s[d_s["diff"] > 0].sort_values("diff", ascending=False)
+    women_lead  = d_s[d_s["diff"] < 0].sort_values("diff")
+    parts = [f"{vol_type} Volunteering – {dim_display} ({selected_year})."]
+    if not men_lead.empty:
+        r = men_lead.iloc[0]
+        parts.append(f"Men lead most in {r['cat_label']} ({r[col_m]:.1f}{unit}).")
+    if not women_lead.empty:
+        r = women_lead.iloc[0]
+        parts.append(f"Women lead most in {r['cat_label']} ({r[col_w]:.1f}{unit}).")
+    if men_lead.empty and women_lead.empty:
+        parts.append("No gender differences observed.")
+    parts.append(f"Data table below shows all {len(d)} categories.")
+    summary = " ".join(parts)
+
+    # ── accessible html table ─────────────────────────────────────────────────
+    # aria-label on the table itself names it without duplicating the live summary.
+    # The wrapper div (in layout) says "region"; the table says what it contains.
+    # No <caption> — the live summary already announces the current context.
+    table = [
+        html.P("Data table. Use arrow keys in browse mode to navigate cells. "
+               "NVDA announces the column header before each value.",
+               className="visually-hidden"),
+        html.Table([
+            html.Thead(html.Tr([
+                html.Th(dim_display, scope="col"),
+                html.Th(hdr_m, scope="col"),
+                html.Th(hdr_w, scope="col"),
+            ])),
+            html.Tbody([
+                html.Tr([
+                    html.Td(row["cat_label"]),
+                    html.Td(f"{row[col_m]:.1f}"),
+                    html.Td(f"{row[col_w]:.1f}"),
+                ]) for _, row in d.iterrows()
+            ]),
+        ],
+        className="table table-bordered table-hover table-sm mt-2",
+        **{"aria-label": f"{vol_type} Volunteering – {dim_display} ({selected_year})"}),
+    ]
+
+    # ── chart ─────────────────────────────────────────────────────────────────
     if display_mode == "count":
         df_long = pd.melt(d, id_vars=["cat_label"],
                           value_vars=["men_count", "women_count"],
@@ -851,7 +943,6 @@ def update_gender_comparison(vol_type, dimension, display_mode, selected_year):
         "men_perc":  "Men", "women_perc":  "Women",
     })
 
-    dim_display = DIM_LABELS.get(dimension, dimension)
     fig = px.bar(df_long, x="cat_label", y="Value", color="Gender",
                  barmode="group",
                  labels={"cat_label": dim_display, "Value": y_label},
@@ -861,7 +952,7 @@ def update_gender_comparison(vol_type, dimension, display_mode, selected_year):
         yaxis_title=y_label, xaxis_title="",
         template="plotly_white", height=500,
     )
-    return fig
+    return fig, table, summary
 
 
 @app.callback(

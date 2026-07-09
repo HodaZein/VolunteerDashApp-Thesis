@@ -1,0 +1,55 @@
+/* ── Gender comparison dbc.Select → match dcc.Dropdown (React-Select) closed state ──
+   Exact values sourced from dash/dcc/dash_core_components.js React-Select CSS bundle:
+     border: 1px solid #ccc  |  border-radius: 4px  |  height: 36px (border-box)
+     focus border: #007eff   |  arrow: #999 triangle 10×5 px                        */
+
+#gender-type-select,
+#gender-dimension-select,
+#gender-year-select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* 36px total height (border-box): 1px border × 2 + 5px pad × 2 + 24px line-height */
+    height: 36px;
+    padding: 5px 32px 5px 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    /* Downward-pointing filled triangle matching React-Select's CSS border-trick arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 5'%3E%3Cpath fill='%23999' d='M0 0 L10 0 L5 5 Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 5px;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: default;
+    transition: none;
+}
+
+#gender-type-select:hover,
+#gender-dimension-select:hover,
+#gender-year-select:hover {
+    /* React-Select hover: subtle bottom shadow, no border-color change */
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+}
+
+#gender-type-select:focus,
+#gender-dimension-select:focus,
+#gender-year-select:focus {
+    outline: 0;
+    border-color: #007eff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 0 3px rgba(0, 126, 255, .1);
+}
+
+/* ── Gender comparison data table ─────────────────────────────────────────── */
+#gender-comparison-table:focus {
+    outline: 2px solid #2684FF;
+    outline-offset: 2px;
+}
+
+#gender-comparison-table .table th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
