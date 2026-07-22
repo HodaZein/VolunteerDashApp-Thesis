@@ -548,15 +548,20 @@ def toggle_offcanvas(n, is_open):
     Input("stat-type-radio", "value"),
     Input("year-dropdown", "value"),
     Input("reset-button", "n_clicks"),
+    #Input("region-select-dropdown", "value"),
     State("selected-region", "data"),
     prevent_initial_call=False,
 )
+
+#def update_visuals(click_data, metric_value, stat_type, year, reset_clicks, region_dropdown, current_region):
 def update_visuals(click_data, metric_value, stat_type, year, reset_clicks, current_region):
     triggered = ctx.triggered_id
     d_year = geo_df[geo_df["year"] == int(year)]
 
     if triggered == "reset-button":
         new_region = regions[0]
+    #elif triggered == "region-select-dropdown" and region_dropdown:
+     #   new_region = region_dropdown
     elif (triggered == "austria-map" and click_data
           and click_data.get("points")
           and "location" in click_data["points"][0]):
@@ -905,9 +910,7 @@ def update_gender_comparison(vol_type, dimension, display_mode, selected_year):
     # The wrapper div (in layout) says "region"; the table says what it contains.
     # No <caption> — the live summary already announces the current context.
     table = [
-        html.P("Data table. Use arrow keys in browse mode to navigate cells. "
-               "NVDA announces the column header before each value.",
-               className="visually-hidden"),
+        html.Caption(f"{vol_type} Volunteering – {dim_display} ({selected_year}) ", className="visually-hidden"),
         html.Table([
             html.Thead(html.Tr([
                 html.Th(dim_display, scope="col"),
@@ -916,14 +919,15 @@ def update_gender_comparison(vol_type, dimension, display_mode, selected_year):
             ])),
             html.Tbody([
                 html.Tr([
-                    html.Td(row["cat_label"]),
+                    html.Th(row["cat_label"],scope="row"),
                     html.Td(f"{row[col_m]:.1f}"),
                     html.Td(f"{row[col_w]:.1f}"),
-                ]) for _, row in d.iterrows()
+                ]) for _, row in d.iterrows() 
             ]),
         ],
-        className="table table-bordered table-hover table-sm mt-2",
-        **{"aria-label": f"{vol_type} Volunteering – {dim_display} ({selected_year})"}),
+        className="table table-bordered table-hover table-sm mt-2"
+       ## ,**{"aria-label": f"{vol_type} Volunteering – {dim_display} ({selected_year})"}
+       ),
     ]
 
     # ── chart ─────────────────────────────────────────────────────────────────
