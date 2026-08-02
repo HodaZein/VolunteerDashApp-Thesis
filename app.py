@@ -139,7 +139,7 @@ def _ts_demographic_options():
 
 
 # ── Dash app ──────────────────────────────────────────────────────────────────
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
+app = dash.Dash(__name__, 
     title="Statistics of Volunteering in Austria",
     index_string="""<!DOCTYPE html>
 <html lang="en">
