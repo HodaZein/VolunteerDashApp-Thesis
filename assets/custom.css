@@ -95,3 +95,11 @@
     background-color: #f0f0f0;
     font-weight: 600;
 }
+
+input[type="radio"] { accent-color: #0072B2; }
+.form-check-input:checked { background-color: #0072B2; border-color: #0072B2; }
+.rc-slider-track { background-color: #0072B2; }
+.rc-slider-handle { border-color: #0072B2; }
+.rc-slider-handle:hover, .rc-slider-handle:focus,
+.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging { border-color: #0072B2; box-shadow: 0 0 0 3px rgba(0,114,178,.2); }
+.rc-slider-dot-active { border-color: #0072B2; }
