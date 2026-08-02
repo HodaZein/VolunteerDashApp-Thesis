@@ -266,9 +266,9 @@ app.layout = dbc.Container([
                 html.Div("Year Range", className="mb-1"),
                 dcc.RangeSlider(
                     id="ts-year-slider",
-                    min=min(years), max=max(years),
-                    value=[min(years), max(years)],
-                    marks={y: str(y) for y in years},
+                    min=int(min(years)), max=int(max(years)),
+                    value=[int(min(years)), int(max(years))],
+                    marks={int(y): str(y) for y in years},
                     step=None,
                 ),
             ], width=4, style={"paddingTop": 12}),
