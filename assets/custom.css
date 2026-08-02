@@ -5,7 +5,21 @@
 
 #gender-type-select,
 #gender-dimension-select,
-#gender-year-select {
+#gender-year-select,
+#metric-dropdown,
+#year-dropdown,
+#ts-type-dropdown,
+#ts-demographic-dropdown,
+#ts2-demographic-dropdown,
+#ts2-category-dropdown,
+#mb-gender-dropdown,
+#mb-year-dropdown,
+#activity-type-dropdown,
+#activity-demographic-dropdown,
+#activity-year-dropdown,
+#errorBar-voltype-dropdown,
+#errorBar-demographic-dropdown,
+#errorBar-year-dropdown {
     border: 1px solid #ccc;
     border-radius: 4px;
     /* 36px total height (border-box): 1px border × 2 + 5px pad × 2 + 24px line-height */
@@ -30,14 +44,42 @@
 
 #gender-type-select:hover,
 #gender-dimension-select:hover,
-#gender-year-select:hover {
+#gender-year-select:hover,
+#metric-dropdown:hover,
+#year-dropdown:hover,
+#ts-type-dropdown:hover,
+#ts-demographic-dropdown:hover,
+#ts2-demographic-dropdown:hover,
+#ts2-category-dropdown:hover,
+#mb-gender-dropdown:hover,
+#mb-year-dropdown:hover,
+#activity-type-dropdown:hover,
+#activity-demographic-dropdown:hover,
+#activity-year-dropdown:hover,
+#errorBar-voltype-dropdown:hover,
+#errorBar-demographic-dropdown:hover,
+#errorBar-year-dropdown:hover {
     /* React-Select hover: subtle bottom shadow, no border-color change */
     box-shadow: 0 1px 0 rgba(0, 0, 0, .06);
 }
 
 #gender-type-select:focus,
 #gender-dimension-select:focus,
-#gender-year-select:focus {
+#gender-year-select:focus,
+#metric-dropdown:focus,
+#year-dropdown:focus,
+#ts-type-dropdown:focus,
+#ts-demographic-dropdown:focus,
+#ts2-demographic-dropdown:focus,
+#ts2-category-dropdown:focus,
+#mb-gender-dropdown:focus,
+#mb-year-dropdown:focus,
+#activity-type-dropdown:focus,
+#activity-demographic-dropdown:focus,
+#activity-year-dropdown:focus,
+#errorBar-voltype-dropdown:focus,
+#errorBar-demographic-dropdown:focus,
+#errorBar-year-dropdown:focus {
     outline: 0;
     border-color: #007eff;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 0 3px rgba(0, 126, 255, .1);

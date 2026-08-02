@@ -139,7 +139,25 @@ def _ts_demographic_options():
 
 
 # ── Dash app ──────────────────────────────────────────────────────────────────
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],
+    title="Statistics of Volunteering in Austria",
+    index_string="""<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>""")
 server = app.server
 
 app.layout = dbc.Container([
@@ -151,7 +169,7 @@ app.layout = dbc.Container([
                    style={"position": "fixed", "top": "20px", "left": "20px",
                           "zIndex": 9999, "fontSize": "24px"}),
         dbc.Offcanvas([
-            html.H5("Contents", className="my-3"),
+            html.H2("Contents", className="h5 my-3"),
             dbc.Nav([
                 dbc.NavLink("Geographic Distribution", href="#choropleth-card", external_link=True),
                 dbc.NavLink("Time-Series Trends (demographic comparison)", href="#timeseries-card", external_link=True),
@@ -167,30 +185,32 @@ app.layout = dbc.Container([
 
     # ── Geographic Distribution ──────────────────────────────────────────────
     dbc.Card([dbc.CardBody([
-        html.H4("Geographic Distribution of Volunteering",
+        html.H2("Geographic Distribution of Volunteering",
                 className="mb-4 mt-2 text-center fw-semibold"),
         dbc.Row([
             dbc.Col([
-                html.Label("Type of Volunteering", className="mb-1"),
-                dcc.Dropdown(id="metric-dropdown", options=[
+                html.Label("Type of Volunteering", className="mb-1", htmlFor="metric-dropdown"),
+                dbc.Select(id="metric-dropdown", options=[
                     {"label": "Any", "value": "perc_volunteers_from_pop"},
                     {"label": "Formal", "value": "perc_formal_from_pop"},
                     {"label": "Informal", "value": "perc_informal_from_pop"},
-                ], value="perc_volunteers_from_pop", style={"width": "100%"}),
+                ], value="perc_volunteers_from_pop"),
             ], width=2),
             dbc.Col([
-                html.Label("Statistic", className="mb-1"),
-                dcc.RadioItems(id="stat-type-radio", options=[
-                    {"label": "Percentage", "value": "perc"},
-                    {"label": "Avg Hours/week", "value": "avg_hours"},
-                    {"label": "Median Hours", "value": "median_hours"},
-                ], value="perc", labelStyle={"marginRight": "15px"}),
+                html.Fieldset([
+                    html.Legend("Statistic", className="mb-1"),
+                    dcc.RadioItems(id="stat-type-radio", options=[
+                        {"label": "Percentage", "value": "perc"},
+                        {"label": "Avg Hours/week", "value": "avg_hours"},
+                        {"label": "Median Hours", "value": "median_hours"},
+                    ], value="perc", labelStyle={"marginRight": "15px"}),
+                ], style={"border": "none", "padding": 0, "margin": 0}),
             ], width=2, style={"paddingTop": 30}),
             dbc.Col([
-                html.Label("Year", className="mb-1"),
-                dcc.Dropdown(id="year-dropdown",
-                             options=[{"label": str(y), "value": y} for y in years],
-                             value=max(years), clearable=False),
+                html.Label("Year", className="mb-1", htmlFor="year-dropdown"),
+                dbc.Select(id="year-dropdown",
+                           options=[{"label": str(y), "value": str(y)} for y in years],
+                           value=str(max(years))),
             ], width=2),
             dbc.Col([
                 dbc.Button("Reset to Austria", id="reset-button",
@@ -198,50 +218,52 @@ app.layout = dbc.Container([
             ], width=2, style={"textAlign": "right"}),
         ], className="mb-4", align="center", justify="center"),
         dbc.Row([
-            dbc.Col(dcc.Graph(id="austria-map"), width=6),
-            dbc.Col(dcc.Graph(id="region-boxplot"), width=6),
+            dbc.Col(html.Figure(dcc.Graph(id="austria-map", config={"displaylogo": False}), **{"aria-describedby": "desc-choropleth"}, style={"margin": 0}), width=6),
+            dbc.Col(html.Figure(dcc.Graph(id="region-boxplot",config={"displaylogo": False}), **{"aria-describedby": "desc-choropleth"}, style={"margin": 0}), width=6),
         ]),
         dbc.Row([dbc.Col(html.Div(id="data-insights", className="data-insights"), width=12)]),
         dbc.Alert([
-            html.H6("Graph description", className="alert-heading"),
+            html.P("Graph description", className="fw-bold mb-1"),
             html.P("The above graph shows the distribution of volunteers across Austrian regions. "
                    "Percentages represent the proportion of people who participated in the selected "
-                   "volunteering type during the selected year from the total population of the region."),
-        ], color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
+                   "volunteering type during the selected year from the total population above 15 years of age in the region."),
+        ], id="desc-choropleth", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
     ])], id="choropleth-card", className="mb-5 shadow-sm border-0",
        style={"backgroundColor": "#f8f9fa"}),
 
     # ── Time Series (demographic comparison) ─────────────────────────────────
     dbc.Card([dbc.CardBody([
-        html.H4("Time-series trends of Volunteering across demographic categories",
+        html.H2("Time-series trends of Volunteering across demographic categories",
                 className="mb-4 mt-2 text-center fw-semibold"),
         dbc.Row([
             dbc.Col([
-                html.Label("Type of Volunteering", className="mb-1"),
-                dcc.Dropdown(id="ts-type-dropdown", options=[
+                html.Label("Type of Volunteering", className="mb-1", htmlFor="ts-type-dropdown"),
+                dbc.Select(id="ts-type-dropdown", options=[
                     {"label": "Any", "value": "any"},
                     {"label": "Formal", "value": "formal"},
                     {"label": "Informal", "value": "informal"},
                     {"label": "Formal and Informal", "value": "both_formal_informal"},
                     {"label": "Formal Only", "value": "formal_only"},
                     {"label": "Informal Only", "value": "informal_only"},
-                ], value="any", clearable=False),
+                ], value="any"),
             ], width=2),
             dbc.Col([
-                html.Label("Demographic", className="mb-1"),
-                dcc.Dropdown(id="ts-demographic-dropdown",
-                             options=_ts_demographic_options(),
-                             value="total", clearable=False),
+                html.Label("Demographic", className="mb-1", htmlFor="ts-demographic-dropdown"),
+                dbc.Select(id="ts-demographic-dropdown",
+                           options=_ts_demographic_options(),
+                           value="total"),
             ], width=2),
             dbc.Col([
-                html.Label("Statistic", className="mb-1"),
-                dcc.RadioItems(id="ts-radio", options=[
-                    {"label": "Percentage", "value": "perc"},
-                    {"label": "Count", "value": "count"},
-                ], value="perc", labelStyle={"marginRight": "15px"}),
+                html.Fieldset([
+                    html.Legend("Statistic", className="mb-1"),
+                    dcc.RadioItems(id="ts-radio", options=[
+                        {"label": "Percentage", "value": "perc"},
+                        {"label": "Count", "value": "count"},
+                    ], value="perc", labelStyle={"marginRight": "15px"}),
+                ], style={"border": "none", "padding": 0, "margin": 0}),
             ], width=2, style={"paddingTop": 8}),
             dbc.Col([
-                html.Label("Year Range", className="mb-1"),
+                html.Div("Year Range", className="mb-1"),
                 dcc.RangeSlider(
                     id="ts-year-slider",
                     min=min(years), max=max(years),
@@ -251,45 +273,46 @@ app.layout = dbc.Container([
                 ),
             ], width=4, style={"paddingTop": 12}),
         ], className="mb-4", align="center", justify="center"),
-        dcc.Graph(id="ts-line-graph"),
+        html.Figure(dcc.Graph(id="ts-line-graph", config={"displaylogo": False}), **{"aria-describedby": "desc-ts"}, style={"margin": 0}),
         dbc.Alert([
-            html.H6("Graph description", className="alert-heading"),
+            html.P("Graph description", className="fw-bold mb-1"),
             html.P([
                 "The above graph shows time series trends of volunteering across demographic categories. ",
-                "For Any/Formal/Informal, the percentage is from all residents in the selected demographic group. ",
+                "For Any/Formal/Informal, the percentage is from all residents above 15 years of age in the selected demographic group. ",
                 html.Br(), html.Br(),
                 "For Formal and Informal/Formal Only/Informal Only, the percentage is from all volunteers "
                 "in the selected demographic group (i.e. what share of volunteers fall into each overlap category).",
             ]),
-        ], color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
+        ], id="desc-ts", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
     ])], id="timeseries-card", className="mb-5 shadow-sm border-0",
        style={"backgroundColor": "#f8f9fa"}),
 
     # ── Time Series (volunteering type comparison) ────────────────────────────
     dbc.Card([dbc.CardBody([
-        html.H4("Time-series trends of Volunteering across volunteering types",
+        html.H2("Time-series trends of Volunteering across volunteering types",
                 className="mb-4 mt-2 text-center fw-semibold"),
         dbc.Row([
             dbc.Col([
-                html.Label("Demographic Dimension", className="mb-1"),
-                dcc.Dropdown(id="ts2-demographic-dropdown",
-                             options=_ts_demographic_options(),
-                             value="total",
-                             clearable=False),
+                html.Label("Demographic Dimension", className="mb-1", htmlFor="ts2-demographic-dropdown"),
+                dbc.Select(id="ts2-demographic-dropdown",
+                           options=_ts_demographic_options(),
+                           value="total"),
             ], width=2),
             dbc.Col([
-                html.Label("Demographic Category", className="mb-1"),
-                dcc.Dropdown(id="ts2-category-dropdown", options=[], value=None, clearable=False),
+                html.Label("Demographic Category", className="mb-1", htmlFor="ts2-category-dropdown"),
+                dbc.Select(id="ts2-category-dropdown", options=[], value=""),
             ], width=2),
             dbc.Col([
-                html.Label("Statistic", className="mb-1"),
-                dcc.RadioItems(id="ts2-radio", options=[
-                    {"label": "Percentage", "value": "perc"},
-                    {"label": "Count", "value": "count"},
-                ], value="perc", labelStyle={"margin-right": "15px"}),
+                html.Fieldset([
+                    html.Legend("Statistic", className="mb-1"),
+                    dcc.RadioItems(id="ts2-radio", options=[
+                        {"label": "Percentage", "value": "perc"},
+                        {"label": "Count", "value": "count"},
+                    ], value="perc", labelStyle={"marginRight": "15px"}),
+                ], style={"border": "none", "padding": 0, "margin": 0}),
             ], width=2, style={"paddingTop": 8}),
             dbc.Col([
-                html.Label("Year Range", className="mb-1"),
+                html.Div("Year Range", className="mb-1"),
                 dcc.RangeSlider(
                     id="ts2-year-slider",
                     min=min(years), max=max(years),
@@ -299,101 +322,103 @@ app.layout = dbc.Container([
                 ),
             ], width=4, style={"paddingTop": 12}),
         ], align="center", justify="center", className="mb-4"),
-        dcc.Graph(id="ts2-line-graph"),
+        html.Figure(dcc.Graph(id="ts2-line-graph", config={"displaylogo": False}), **{"aria-describedby": "desc-ts2"}, style={"margin": 0}),
         dbc.Alert([
-            html.H6("Graph description", className="alert-heading"),
+            html.P("Graph description", className="fw-bold mb-1"),
             html.P([
                 "The above graph compares all volunteering type trends for a fixed demographic category across survey years. "
             ,
             ]),
-        ], color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
+        ], id="desc-ts2", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
     ])], id="ts2-time-series-card", className="mb-5 shadow-sm border-0",
        style={"backgroundColor": "#f8f9fa"}),
 
     # ── Motivations and Barriers ──────────────────────────────────────────────
     dbc.Card([dbc.CardBody([
-        html.H4("Motivations and Barriers to Volunteering",
+        html.H2("Motivations and Barriers to Volunteering",
                 className="mb-4 mt-2 text-center fw-semibold"),
         dbc.Row([
             dbc.Col([
-                html.Label("Type", className="mb-1"),
-                dcc.RadioItems(id="mb-type-radio", options=[
-                    {"label": "Motivations", "value": "motivation"},
-                    {"label": "Barriers", "value": "barrier"},
-                ], value="motivation", labelStyle={"marginRight": "15px"}),
+                html.Fieldset([
+                    html.Legend("Type", className="mb-1"),
+                    dcc.RadioItems(id="mb-type-radio", options=[
+                        {"label": "Motivations", "value": "motivation"},
+                        {"label": "Barriers", "value": "barrier"},
+                    ], value="motivation", labelStyle={"marginRight": "15px"}),
+                ], style={"border": "none", "padding": 0, "margin": 0}),
             ], width=2),
             dbc.Col([
-                html.Label("Gender", className="mb-1"),
-                dcc.Dropdown(id="mb-gender-dropdown",
-                             options=[{"label": g.capitalize(), "value": g}
-                                      for g in sorted(mb_df["gender"].unique())],
-                             value="all", clearable=False),
+                html.Label("Gender", className="mb-1", htmlFor="mb-gender-dropdown"),
+                dbc.Select(id="mb-gender-dropdown",
+                           options=[{"label": g.capitalize(), "value": g}
+                                    for g in sorted(mb_df["gender"].unique())],
+                           value="all"),
             ], width=2),
             dbc.Col([
-                html.Label("Year", className="mb-1"),
-                dcc.Dropdown(id="mb-year-dropdown",
-                             options=[{"label": str(y), "value": y} for y in years],
-                             value=max(years), clearable=False),
+                html.Label("Year", className="mb-1", htmlFor="mb-year-dropdown"),
+                dbc.Select(id="mb-year-dropdown",
+                           options=[{"label": str(y), "value": str(y)} for y in years],
+                           value=str(max(years))),
             ], width=2),
         ], align="center", justify="center", className="mb-4"),
-        dcc.Graph(id="mb-diverging-bar"),
+        html.Figure(dcc.Graph(id="mb-diverging-bar", config={"displaylogo": False}), **{"aria-describedby": "desc-mb"}, style={"margin": 0}),
         dbc.Alert([
-            html.H6("Graph description", className="alert-heading"),
+            html.P("Graph description", className="fw-bold mb-1"),
             html.P("The above graph shows reasons that motivated volunteers and barriers faced by non-volunteers "
-                   "in the selected year, sorted by 'strongly agree'."),
-        ], color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
+                   "in the selected year for each gender, sorted by 'strongly agree'."),
+        ], id="desc-mb", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
     ])], id="motivation-barrier-card", className="mb-5 shadow-sm border-0",
        style={"backgroundColor": "#f8f9fa"}),
 
     # ── Volunteer Activity by Demographic ─────────────────────────────────────
     dbc.Card([dbc.CardBody([
-        html.H4("Volunteer Activity by Demographic Group",
+        html.H2("Volunteer Activity by Demographic Group",
                 className="mb-4 mt-2 text-center fw-semibold"),
         dbc.Row([
             dbc.Col([
-                html.Label("Type of Volunteering", className="mb-1"),
-                dcc.Dropdown(id="activity-type-dropdown", options=[
+                html.Label("Type of Volunteering", className="mb-1", htmlFor="activity-type-dropdown"),
+                dbc.Select(id="activity-type-dropdown", options=[
                     {"label": "Formal", "value": "formal"},
                     {"label": "Informal", "value": "informal"},
-                ], value="formal", clearable=False),
+                ], value="formal"),
             ], width=2),
             dbc.Col([
-                html.Label("Demographic", className="mb-1"),
-                dcc.Dropdown(id="activity-demographic-dropdown", options=[], value="all",
-                             clearable=False),
+                html.Label("Demographic", className="mb-1", htmlFor="activity-demographic-dropdown"),
+                dbc.Select(id="activity-demographic-dropdown", options=[], value="all"),
             ], width=2),
             dbc.Col([
-                html.Label("Statistic", className="mb-1"),
-                dcc.RadioItems(id="activity-display-mode", options=[
-                    {"label": "Percentage", "value": "percent"},
-                    {"label": "Count", "value": "count"},
-                ], value="percent", labelStyle={"marginRight": "15px"}),
+                html.Fieldset([
+                    html.Legend("Statistic", className="mb-1"),
+                    dcc.RadioItems(id="activity-display-mode", options=[
+                        {"label": "Percentage", "value": "percent"},
+                        {"label": "Count", "value": "count"},
+                    ], value="percent", labelStyle={"marginRight": "15px"}),
+                ], style={"border": "none", "padding": 0, "margin": 0}),
             ], width=2),
             dbc.Col([
-                html.Label("Year", className="mb-1"),
-                dcc.Dropdown(id="activity-year-dropdown",
-                             options=[{"label": str(y), "value": y} for y in years],
-                             value=max(years), clearable=False),
+                html.Label("Year", className="mb-1", htmlFor="activity-year-dropdown"),
+                dbc.Select(id="activity-year-dropdown",
+                           options=[{"label": str(y), "value": str(y)} for y in years],
+                           value=str(max(years))),
             ], width=2),
         ], align="center", justify="center", className="mb-4"),
-        dcc.Graph(id="activity-stacked-bar"),
+        html.Figure(dcc.Graph(id="activity-stacked-bar", config={"displaylogo": False}), **{"aria-describedby": "desc-activity"}, style={"margin": 0}),
         dbc.Alert([
-            html.H6("Graph description", className="alert-heading"),
+            html.P("Graph description", className="fw-bold mb-1"),
             html.P([
-                "The above graph shows the distribution of formal/informal volunteers across volunteering areas. ",
+                "The above graph shows the distribution of formal/informal volunteers across volunteering activities. ",
                 html.Br(),
                 "Each bar shows the percentage of volunteers who do each activity from all volunteers "
-                "of the selected type in the selected year. ",
-                "Gender, Age, and Education breakdowns are available for all years. "
-                "Frequency of Volunteering breakdown is not available for 2025.",
+                "of the selected volunteeringtype in the selected year. ",
+
             ]),
-        ], color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
+        ], id="desc-activity", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
     ])], id="activity-bar-card", className="mb-5 shadow-sm border-0",
        style={"backgroundColor": "#f8f9fa"}),
 
     # ── Gender Comparison ─────────────────────────────────────────────────────
     dbc.Card([dbc.CardBody([
-        html.H4("Gender Comparison in Volunteering",
+        html.H2("Gender Comparison in Volunteering",
                 className="mb-4 mt-2 text-center fw-semibold"),
         dbc.Row([
             dbc.Col([
@@ -425,7 +450,7 @@ app.layout = dbc.Container([
                            value=str(max(years))),
             ], width=2),
         ], align="center", justify="center", className="mb-4"),
-        dcc.Graph(id="gender-comparison-bar"),
+        html.Figure(dcc.Graph(id="gender-comparison-bar", config={"displaylogo": False}), **{"aria-describedby": "desc-gender"}, style={"margin": 0}),
         html.Div(id="gender-live-summary",
                  className="visually-hidden",
                  **{"aria-live": "polite", "aria-atomic": "true"}),
@@ -437,50 +462,46 @@ app.layout = dbc.Container([
             style={"marginTop": "16px", "overflowX": "auto"},
         ),
         dbc.Alert([
-            html.H6("Graph description", className="alert-heading"),
+            html.P("Graph description", className="fw-bold mb-1"),
             html.P([
-                "The above graph compares the contribution of men vs women in volunteering. ",
-                html.Br(),
-                "Note: Time per week breakdown (hours distribution by gender) "
-                "is not available for 2025 as the corresponding table was not published "
-                "in the 2025 survey release.",
+                "The above graph compares different participation dimensions of men vs women in volunteering. ",
+
             ]),
-        ], color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
+        ], id="desc-gender", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
     ])], id="gender-comparison-card", className="mb-5 shadow-sm border-0",
        style={"backgroundColor": "#f8f9fa"}),
 
     # ── Error Bar / Time Distribution ─────────────────────────────────────────
     dbc.Card([dbc.CardBody([
-        html.H4("Volunteer Time Distribution",
+        html.H2("Volunteer Time Distribution",
                 className="mb-4 mt-2 text-center fw-semibold"),
         dbc.Row([
             dbc.Col([
-                html.Label("Type of Volunteering", className="mb-1"),
-                dcc.Dropdown(id="errorBar-voltype-dropdown", options=[
+                html.Label("Type of Volunteering", className="mb-1", htmlFor="errorBar-voltype-dropdown"),
+                dbc.Select(id="errorBar-voltype-dropdown", options=[
                     {"label": "Any", "value": "Total"},
                     {"label": "Formal", "value": "Formal"},
                     {"label": "Informal", "value": "Informal"},
-                ], value="Total", clearable=False),
+                ], value="Total"),
             ], width=2),
             dbc.Col([
-                html.Label("Demographic", className="mb-1"),
-                dcc.Dropdown(id="errorBar-demographic-dropdown", options=[], value="total",
-                             clearable=False),
+                html.Label("Demographic", className="mb-1", htmlFor="errorBar-demographic-dropdown"),
+                dbc.Select(id="errorBar-demographic-dropdown", options=[], value="total"),
             ], width=2),
             dbc.Col([
-                html.Label("Year", className="mb-1"),
-                dcc.Dropdown(id="errorBar-year-dropdown",
-                             options=[{"label": str(y), "value": y} for y in years],
-                             value=max(years), clearable=False),
+                html.Label("Year", className="mb-1", htmlFor="errorBar-year-dropdown"),
+                dbc.Select(id="errorBar-year-dropdown",
+                           options=[{"label": str(y), "value": str(y)} for y in years],
+                           value=str(max(years))),
             ], width=2),
         ], align="center", justify="center", className="mb-4"),
-        dcc.Graph(id="errorBar-figure"),
+        html.Figure(dcc.Graph(id="errorBar-figure",config={"displaylogo": False}), **{"aria-describedby": "desc-errorbar"}, style={"margin": 0}),
         dbc.Alert([
-            html.H6("Graph description", className="alert-heading"),
+            html.P("Graph description", className="fw-bold mb-1"),
             html.P("The above graph compares weekly time spent on volunteering by demographic category. "
                    "Bar height = median; diamond marker = mean; error bars = interquartile range (P25–P75). "
-                   "Task Type demographic is available for all years except 2025."),
-        ], color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
+                   ),
+        ], id="desc-errorbar", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
     ])], id="errorBar-card", className="mb-5 shadow-sm border-0",
        style={"backgroundColor": "#f8f9fa"}),
 
@@ -590,7 +611,7 @@ def update_visuals(click_data, metric_value, stat_type, year, reset_clicks, curr
         error_y=dict(type="data", symmetric=False,
                      array=[q3 - median], arrayminus=[median - q1],
                      color="black", thickness=2, width=8),
-        marker_color="steelblue", name="Median with IQR",
+        marker_color="#0072B2", name="Median with IQR",
         hovertemplate=f"<b>{new_region}</b><br>Q3: {q3}<br>Median: {median}<br>Q1: {q1}<extra></extra>",
     ))
     fig.add_trace(go.Scatter(
@@ -612,7 +633,7 @@ def update_visuals(click_data, metric_value, stat_type, year, reset_clicks, curr
 
     fig_map = px.choropleth(
         d_year, locations="region", geojson=geojson_data, color=column,
-        color_continuous_scale="Reds", featureidkey="properties.name",
+        color_continuous_scale="Blues", featureidkey="properties.name",
         labels={column: MAP_COLUMN_LABELS.get(column, column)},
         title=f"{new_region} {value:.1f}{unit} ({year})",
     )
@@ -649,8 +670,8 @@ def update_insights(metric_dropdown_value, stat_type_value, year):
     label_map = {"perc": "% of Population", "avg_hours": "Average Weekly Hours",
                  "median_hours": "Median Weekly Hours"}
     return [
-        html.H5(f"Highest: {highest['region']} ({highest[column]:.1f} {label_map[stat_type_value]})"),
-        html.H5(f"Lowest:  {lowest['region']} ({lowest[column]:.1f} {label_map[stat_type_value]})"),
+        html.P([html.Strong("Highest: "), f"{highest['region']} ({highest[column]:.1f} {label_map[stat_type_value]})"], className="mb-1 mt-2"),
+        html.P([html.Strong("Lowest: "), f"{lowest['region']} ({lowest[column]:.1f} {label_map[stat_type_value]})"], className="mb-1"),
     ]
 
 
@@ -669,13 +690,15 @@ def update_time_series(demographic, volunteer_type, show_type, year_range):
         (trend_df["year"] <= year_range[1])
     ]
     categories = d["category"].unique()
-    fig = px.line()
-    for cat in sorted(categories):
+    SAFE = px.colors.qualitative.Safe
+    fig = go.Figure()
+    for i, cat in enumerate(sorted(categories)):
         subset = d[d["category"] == cat].sort_values("year")
         y_col  = "percentage" if show_type == "perc" else "count_1000"
         fig.add_scatter(
             x=subset["year"], y=subset[y_col],
             mode="lines+markers", name=cat_label(cat),
+            line=dict(color=SAFE[i % len(SAFE)]),
         )
     y_label = ("Percentage of Volunteers" if show_type == "perc"
                 else "Number of Volunteers (thousands)")
@@ -710,13 +733,13 @@ def update_motiv_barrier_chart(type_choice, gender_choice, selected_year):
 
     fig = go.Figure()
     fig.add_bar(x=-df["rather_disagree"], y=categories, orientation="h",
-                name="Rather disagree", marker_color="#ff9896")
+                name="Rather disagree", marker_color="#E8A87C")
     fig.add_bar(x=-df["not_at_all"], y=categories, orientation="h",
-                name="Not at all", marker_color="#d62728")
+                name="Not at all", marker_color="#D55E00")
     fig.add_bar(x=df["rather_agree"], y=categories, orientation="h",
-                name="Rather agree", marker_color="#98df8a")
+                name="Rather agree", marker_color="#88C9A1")
     fig.add_bar(x=df["fully_agree"], y=categories, orientation="h",
-                name="Fully agree", marker_color="#2ca02c")
+                name="Fully agree", marker_color="#009E73")
 
     fig.update_layout(
         barmode="relative",
@@ -797,12 +820,13 @@ def update_activity_stacked_bar(vol_type, csv_demo, display_mode, selected_year)
     demo_display = DEMOGRAPHIC_LABELS.get(csv_demo, csv_demo.capitalize())
 
     if csv_demo == "all":
-        fig = px.bar(d, x="area_label", y="value",
+        fig = px.bar(d, x="area_label", y="value", color_discrete_sequence=[px.colors.qualitative.Safe[0]],
                      labels={"area_label": "Area", "value": y_title},
                      title=f"{vol_type.capitalize()} Volunteering – Total ({selected_year})",
                      template="plotly_white")
     else:
         fig = px.bar(d, x="area_label", y="value", color="cat_label",
+                     color_discrete_sequence=px.colors.qualitative.Safe,
                      labels={"area_label": "Area", "value": y_title, "cat_label": demo_display},
                      title=f"{vol_type.capitalize()} Volunteering by {demo_display} ({selected_year})",
                      template="plotly_white")
@@ -950,7 +974,7 @@ def update_gender_comparison(vol_type, dimension, display_mode, selected_year):
     fig = px.bar(df_long, x="cat_label", y="Value", color="Gender",
                  barmode="group",
                  labels={"cat_label": dim_display, "Value": y_label},
-                 color_discrete_map={"Men": "steelblue", "Women": "crimson"})
+                 color_discrete_map={"Men": "#0072B2", "Women": "#D55E00"})
     fig.update_layout(
         title=f"{vol_type} Volunteering – {dim_display} ({selected_year})",
         yaxis_title=y_label, xaxis_title="",
@@ -1010,7 +1034,7 @@ def update_errorBar(vol_type, demographic, selected_year):
             title=f"No data for {demo_label(demographic)} in {selected_year}")
 
     d["cat_label"] = d["category"].map(cat_label)
-    color_list = pc.qualitative.Plotly
+    color_list = pc.qualitative.Safe
     colors = color_list * (len(d) // len(color_list) + 1)
 
     fig = go.Figure()
@@ -1053,11 +1077,11 @@ def update_errorBar(vol_type, demographic, selected_year):
     Input("ts2-demographic-dropdown", "value"),
 )
 def update_ts2_categories(demographic):
-    if demographic is None:
-        return [], None
+    if not demographic:
+        return [], ""
     cats = sorted(trend_df[trend_df["demographic"] == demographic]["category"].unique())
     options = [{"label": cat_label(c), "value": c} for c in cats]
-    return options, (cats[0] if cats else None)
+    return options, (cats[0] if cats else "")
 
 
 @app.callback(
@@ -1068,7 +1092,7 @@ def update_ts2_categories(demographic):
     Input("ts2-year-slider", "value"),
 )
 def update_ts2_graph(demographic, category, display_mode, year_range):
-    if demographic is None or category is None:
+    if not demographic or not category:
         return px.line(title="No data available.")
 
     d = trend_df[
@@ -1079,14 +1103,19 @@ def update_ts2_graph(demographic, category, display_mode, year_range):
     ]
 
     vol_types = sorted(d["vol_type"].unique())
-    fig = px.line()
-    for vt in vol_types:
+
+    SAFE = px.colors.qualitative.Safe
+
+    vol_types = sorted(d["vol_type"].unique())
+    fig = go.Figure()
+    for i, vt in enumerate(vol_types):
         subset = d[d["vol_type"] == vt].sort_values("year")
-        y_col  = "percentage" if display_mode == "perc" else "count_1000"
+        y_col = "percentage" if display_mode == "perc" else "count_1000"
         fig.add_scatter(
             x=subset["year"], y=subset[y_col],
             mode="lines+markers",
             name=VOL_TYPE_DISPLAY.get(vt, vt.replace("_", " ").capitalize()),
+            line=dict(color=SAFE[i % len(SAFE)]),
         )
 
     y_label = ("Percentage of Volunteers" if display_mode == "perc"
