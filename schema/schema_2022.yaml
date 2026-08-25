@@ -5,7 +5,7 @@ year: 2022
 data_status: official
 source_file: "../statistic data/2022 sheets/Freiwilligentaetigkeit_2022_Tabellenband.ods"
 
-# Maps each logical table name to its sheet in the source ODS
+# Maps each logical table name to its sheet in the source ODS for documentation purposes. The actual data is stored in tidy CSV files.
 source_tables:
   volunteering_general:    Tabelle1_1
   formal_volunteering:     Tabelle2_1

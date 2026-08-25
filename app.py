@@ -464,7 +464,7 @@ app.layout = dbc.Container([
         dbc.Alert([
             html.P("Graph description", className="fw-bold mb-1"),
             html.P([
-                "The above graph compares different participation dimensions of men vs women in volunteering. ",
+                "This chart compares how volunteering is distributed between genders across categories. In percentage mode, the values show how the volunteers in each category are split between the genders, adding up to 100 percent per category. In count mode, they show the estimated number of volunteers of each gender.",
 
             ]),
         ], id="desc-gender", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
