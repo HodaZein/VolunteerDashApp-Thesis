@@ -279,7 +279,7 @@ app.layout = dbc.Container([
             html.P([
                 "The above graph shows time series trends of volunteering across demographic categories. ",
                 "For Any/Formal/Informal, the percentage is from all residents above 15 years of age in the selected demographic group. ",
-                html.Br(), html.Br(),
+                html.Br(), 
                 "For Formal and Informal/Formal Only/Informal Only, the percentage is from all volunteers "
                 "in the selected demographic group (i.e. what share of volunteers fall into each overlap category).",
             ]),
@@ -328,6 +328,9 @@ app.layout = dbc.Container([
             html.P([
                 "The above graph compares all volunteering type trends for a fixed demographic category across survey years. "
             ,
+                html.Br(), 
+                "For Formal and Informal/Formal Only/Informal Only, the percentage is from all volunteers "
+                "in the selected demographic group (i.e. what share of volunteers fall into each overlap category).",
             ]),
         ], id="desc-ts2", color="light", style={"border": "1px solid #ccc", "marginTop": "10px"}),
     ])], id="ts2-time-series-card", className="mb-5 shadow-sm border-0",
